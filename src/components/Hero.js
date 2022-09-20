@@ -1,7 +1,5 @@
 
 const Hero = () => {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
 
   const style = {
     width: "100%",
@@ -13,7 +11,7 @@ const Hero = () => {
     <div
       className="hero min-h-screen"
       style={style}>
-      <div className="hero-overlay bg-opacity-30"></div>
+      <div className="hero-overlay bg-opacity-20"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
           <h1 className="mb-5 text-5xl font-bold">Welcome to your Adaptogen Store</h1>
@@ -26,4 +24,3 @@ const Hero = () => {
   );
 };
 export default Hero;
-<img src='./adaptogenosLogo.jpeg'/>
