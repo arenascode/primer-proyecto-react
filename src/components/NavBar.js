@@ -1,11 +1,12 @@
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <div className="navbar bg-warning-content text-neutral-content">
       <div className="flex-1 justify-center">
-        <a className="btn btn-ghost normal-case text-xl text-white">
+        <Link to={"/"} className="btn btn-ghost normal-case text-xl text-white">
           Adaptogen Store
-        </a>
+        </Link>
       </div>
       <div className="flex-none">
         <div className="dropdown dropdown-end">
@@ -44,5 +45,6 @@ const NavBar = () => {
       </div>
     </div>
   );
-}
-export default NavBar
+};
+export default NavBar;
+
