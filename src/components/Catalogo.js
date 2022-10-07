@@ -1,4 +1,3 @@
-import Hero from "./Hero";
 import ItemListContainer from "./ItemListContainer";
 
 const Catalogo = () => {

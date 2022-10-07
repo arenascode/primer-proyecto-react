@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ItemDetail from "./ItemDetail";
+import ProductCard from "./ProductCard";
 import { products } from "./Products";
 
 const ItemListContainer = () => {
@@ -13,7 +13,6 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     getProducts().then((response) => {
-      console.log(response);
       setItems(response);
     });
   }, []);
@@ -27,9 +26,9 @@ const ItemListContainer = () => {
   };
 
   return (
-    <div>
+    <div className="itemList">
       {items.map((i) => (
-        <ItemDetail key={i.id} {...i} />
+        <ProductCard key={i.id} {...i} />
       ))}
     </div>
   );
