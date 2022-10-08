@@ -13,11 +13,9 @@ const ProductDetail = ({ item }) => {
         <div>
           <h1 className="text-5xl font-bold">{item.name}</h1>
           <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
+            {item.Description}
           </p>
-          <button className="btn btn-primary">Get Started</button>
+          <button className="btn">Comprar</button>
         </div>
       </div>
     </div>
@@ -50,7 +48,6 @@ const ItemDetail = () => {
 
   return (
     <div>
-      <h1>Detalle del producto</h1>
       <div>
         <ProductDetail item={item} />
       </div>

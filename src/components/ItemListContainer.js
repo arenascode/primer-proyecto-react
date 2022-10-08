@@ -3,11 +3,7 @@ import ProductCard from "./ProductCard";
 import { products } from "./Products";
 
 const ItemListContainer = () => {
-  const styles = {
-    padding: "5px",
-    color: "brown",
-    textAlign: "center",
-  };
+
 
   const [items, setItems] = useState([]);
 
@@ -21,16 +17,16 @@ const ItemListContainer = () => {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(products);
-      }, 2000);
+      }, 1000);
     });
   };
 
   return (
-    <div className="itemList">
+    <>
       {items.map((i) => (
         <ProductCard key={i.id} {...i} />
       ))}
-    </div>
+    </>
   );
 };
 export default ItemListContainer;

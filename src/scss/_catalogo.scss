@@ -1,0 +1,13 @@
+
+.catalogueTitle {
+  font-size: 2rem;
+  padding: 10px;
+  
+}
+.catalogueItems {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-left: 100px;
+  column-gap: 1.5em;
+  row-gap: 0.8em;
+}
