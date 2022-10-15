@@ -42,23 +42,23 @@ const ProductDetail = ({ item }) => {
             <ul class="list-disc space-y-3 pl-4 text-m">
               <li class="text-gray-900">
                 <span class="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
-                  Reduce el estrés
+                  {item.prop1}
                 </span>
               </li>
 
               <li class="">
-                <span class="">Reduce el azucar en sangre</span>
+                <span class="">{item.prop2}</span>
               </li>
 
               <li class="">
-                <span class="">Ayuda a aumentar la masa muscular</span>
+                <span class="">{item.prop3}</span>
               </li>
 
               <li class="">
-                <span class="">Mejora las funciones cerebrales</span>
+                <span class="">{item.prop4}</span>
               </li>
               <li class="">
-                <span class="">Ayuda a dormir mejor</span>
+                <span class="">{item.prop5}</span>
               </li>
             </ul>
           </div>
@@ -71,11 +71,7 @@ const ProductDetail = ({ item }) => {
 
           <div class="mt-4 space-y-6">
             <p class="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
-              Se recomiendan dosis de entre 3 y 6 gramos diarios. Es preferible
-              dividir la dosis diaria en varias tomas, haciendo coincidir una de
-              ellas una o dos horas antes de acostarse. <br />
-              Se recomienda un uso continuado y extendido en el tiempo para
-              experimentar los mayores beneficios.
+              {item.uso}
             </p>
           </div>
         </div>

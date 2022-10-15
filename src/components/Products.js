@@ -8,6 +8,12 @@ const products = [
     img: "/imgProducts/Ashwagandha.jpeg",
     Description:
       "La ashwagandha es una de las hierbas más importantes en el Ayurveda, el sistema médico tradicional de la India, donde ha sido usada desde hace miles de años en el tratamiento de diversas enfermedades.",
+    prop1: "Reduce el estrés.",
+    prop2: "Reduce el azucar en sangre.",
+    prop3: "Ayuda a aumentar la masa muscular.",
+    prop4: "Mejora las funciones cerebrales.",
+    prop5: "Ayuda a dormir mejor.",
+    uso: "Se recomiendan dosis de entre 3 y 6 gramos diarios. Es preferible dividir la dosis diaria en varias tomas, haciendo coincidir una de ellas una o dos horas antes de acostarse. Se recomienda un uso continuado y extendido en el tiempo para experimentar los mayores beneficios.",
   },
   {
     id: 2,
@@ -18,6 +24,12 @@ const products = [
     img: "/imgProducts/cordyceps.jpeg",
     Description:
       "Hongo usado en la medicina tradicional china para aumentar la energía, tratar enfermedades respiratorias o potenciar el deseo sexual, además de otros beneficios.",
+    prop1: "Aumenta la energia.",
+    prop2: "Ayuda a aumentar la capacidad aerobica.",
+    prop3: "Antienvejecimiento.",
+    prop4: "Mejora la fertilidad.",
+    prop5: "Vigorizante sexual.",
+    uso: "La forma de preparación más usada es en infusiones, donde se toma tanto el hongo como el caldo resultante de la cocción. Otra manera tradicional de ingerirlo es añadiéndolo troceado en recetas de cerdo, pollo o pato.",
   },
   {
     id: 3,
@@ -28,6 +40,12 @@ const products = [
     img: "/imgProducts/Eleutero.jpeg",
     Description:
       "Es una planta muy apreciada como remedio contra la extenuación. Se le atribuyen también propiedades como mejorar la memoria y aumentar la resistencia a enfermedades. También se afirma que aumenta la longevidad",
+    prop1: "Mejora la respuesta al estrés y a situaciones complicadas.",
+    prop2: "Antifatiga.",
+    prop3: "Mejora el rendimiento deportivo.",
+    prop4: "Mejora el sistema inmune.",
+    prop5: "Ayuda a reducir azucar en sangre.",
+    uso: "El producto se consume normalmente en polvo, en forma de cápsulas o en comprimidos. También se usa en infusión. El mejor momento para tomar eleuthero es por la mañana, o a comienzos de la tarde, para evitar eventuales problemas de sueño.",
   },
   {
     id: 4,
@@ -38,6 +56,12 @@ const products = [
     img: "/imgProducts/PanaxGinseng.jpeg",
     Description:
       "El ginseng Panax se ingiere para mejorar las habilidades cognitivas y de la memoria, la enfermedad de Alzheimer y muchas otras condiciones.",
+    prop1: "Mejora la función sexual.",
+    prop2: "Reduce el riesgo de gripes o resfriados.",
+    prop3: "Eleva el rendimiento físico y mental.",
+    prop4: "Ayuda al sistema cardiovascular.",
+    prop5: "Aumenta la calidad de vida en la vejez.",
+    uso: "Por lo general, la raíz es el elemento más valioso del ginseng, y se utiliza en la elaboración de cápsulas, comprimidos, cremas y jarabes. puesto que, la dosis adecuada puede variar en función de las necesidades de cada paciente, lo correcto es consultar con un médico o farmacéutico antes de usarla. Ahora conocerás mejor sus formas de presentación. ",
   },
   {
     id: 5,
@@ -48,6 +72,12 @@ const products = [
     img: "/imgProducts/AlbahacaSagrada.jpeg",
     Description:
       "Alivia la fiebre, la bronquitis, el asma, el estrés y las úlceras bucales. Recibe el nombre de albahaca sagrada porque en el hinduismo es venerada como la encarnación de Lakshimi, la esposa de Vishnu.",
+    prop1: "Acción antibacteriana, antifúngica y antiviral.",
+    prop2: "Reduce el estrés.",
+    prop3: "Combate la inflamación.",
+    prop4: "Reduce el riesgo de cancer.",
+    prop5: "Protege el corazón.",
+    uso: "Se puede consumir en infusiones, extractos o tinturas, pero no hay cómo hacer una infusión de las hojas frescas, pues la albahaca sagrada tiene un aroma y sabor deliciosos. Se puede servir como un té frío o caliente, sólo o en combinación con otras hierbas y especias como la canela, pimienta gorda o cayena.",
   },
   {
     id: 6,
@@ -58,6 +88,12 @@ const products = [
     img: "/imgProducts/Regaliz.jpeg",
     Description:
       "A la planta del regaliz (Glycyrrhiza glabra L.) se le atribuyen virtudes y propiedades antiinflamatorias, antivirales, antiácidas, antiulcerosas, antiespasmódicas, digestivas, tónicas, expectorantes, carminativas, y también edulcorantes",
+    prop1: "Ayuda a aliviar los colicos.",
+    prop2: "Contribuye a combatir infecciones.",
+    prop3: "Mejora los sintomas del resfriado.",
+    prop4: "Contribuye a la salud del cabello.",
+    prop5: "ayudar a limpiar manchas y emparejar el tono de la piel.",
+    uso: "Uno de los métodos más tradicionales y extendidos de tomar regaliz es masticar o chupar la raíz de esta planta, y es que esta es la parte que más se utiliza para aprovechar los múltiples usos medicinales y propiedades del regaliz.",
   },
   {
     id: 7,
@@ -68,6 +104,12 @@ const products = [
     img: "/imgProducts/Rhodiola.jpeg",
     Description:
       "El extracto de Rhodiola rosea es obtenido de la raíz de la planta y tiene efectos adaptogénicos que ayudan a combatir el estrés, aumenta la resistencia a actividades físicas y mentales de alto desempeño y tiene efecto antioxidante, entre otros beneficios.",
+    prop1: "Aumenta la vitalidad física.",
+    prop2: "Reduce el estrés.",
+    prop3: "Favorece la agudeza mental y la concentración.",
+    prop4: "Estimulante de la libido.",
+    prop5: "Favorece la respusta inmunitaria.",
+    uso: "Las dosis genéricas recomendadas son de 170 a 185 mg diarios, con los que se asegura una absorción de 4,5 mg de rodiolosida, su componente terapéuticamente más activo.",
   },
   {
     id: 8,
@@ -78,6 +120,12 @@ const products = [
     img: "/imgProducts/Schisandra.jpeg",
     Description:
       "La esquisandra (Schisandra chinensis) es un adaptógeno muy utilizado en medicina tradicional china que ayuda a combatir el estrés y la ansiedad gracias a su efecto tónico y regulador",
+    prop1: "Reduce la fatiga visual.",
+    prop2: "Aumenta la agudeza visual y auditiva.",
+    prop3: "Mejora la concentración, la memoria y la atención.",
+    prop4: "Aumenta el rendimiento físico y mental.",
+    prop5: "Ayuda a combatir el estrés y la ansiedad.",
+    uso: "Es habitual encontrar schisandra en forma de suplementos, pero también puede tomarse en infusión o ensalivando las semillas con diferentes fines",
   },
   {
     id: 9,
@@ -88,6 +136,12 @@ const products = [
     img: "/imgProducts/Shilajit.jpeg",
     Description:
       "El shilajit o betún de asfalto es un musgo de consistencia pegajosa y color marrón negruzco que se encuentra de forma natural en las rocas de las montañas más altas de Asia. Puede prevenir enfermedades cognitivas, aumentar los niveles de testosterona y retrasar el envejecimiento.",
+    prop1: "Mejora el deseo sexual.",
+    prop2: "Reduce la fatiga.",
+    prop3: "Antienvejecimiento.",
+    prop4: "Retrasa el deterioro cognitivo.",
+    prop5: "Util en el tratamiento de la anemia.",
+    uso: "Tomar una o dos veces al día acompañado en agua o leche. Se recomienda empezar con un máximo de 300mg al día.",
   },
 ];
 
