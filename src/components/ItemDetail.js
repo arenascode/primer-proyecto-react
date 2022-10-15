@@ -17,9 +17,11 @@ const ProductDetail = ({ item }) => {
           </div>
         </div>
         <div className="buyDetails">
-          <ItemCount />
+          <ItemCount item={ item } />
         </div>
       </div>
+      {/* Container buy, stock, addCart info */}
+      
       {/* Product Info  */}
       <div className="productDescription m-10 flex">
         <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 content-center">
@@ -86,11 +88,10 @@ const ItemDetail = () => {
 
   const [item, setItem] = useState([])
 
-  console.log(useParams(itemId));
+  // console.log(useParams(itemId));
 
   useEffect(() => {
     getItemDetail().then(response => {
-      console.log(response)
       setItem(response)
     })
   }, [])

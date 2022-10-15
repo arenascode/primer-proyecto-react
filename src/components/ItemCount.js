@@ -1,22 +1,16 @@
 import { useState } from "react";
+import {ItemDetail} from "./ItemDetail";
 
-const ItemCount = () => {
-
-  const styles = {
-    border: 'solid 2px grey',
-    width: 'min-content',
-    marginLeft: '10px',
-    marginBottom: '10px'
-  }
-
-  const [counter, setcounter] = useState(0)
+const ItemCount = ({ item }) => {
+console.log(item.stock);
+  const [counter, setcounter] = useState(1)
   
   const clickHandlerAdd = () => {
     console.log('Clicked add');
-    if (counter <= 9) {
+    if (counter < item.stock) {
       setcounter(counter + 1)
     } else {
-      console.log('Superaste el limite de stock disponible');
+      alert('Superaste el limite de stock disponible');
     }
   }
   const clickHandlerLess = () => {
@@ -29,10 +23,12 @@ const ItemCount = () => {
   }
   
   return (
-    <div className="flex justify-center" style={styles}>
-      <button className="btn m-1" onClick={clickHandlerLess}>-</button>
+    <div className="flex itemCount justify-center align">
+      <button className="btn btn-xs m-1 rounded-full" onClick={clickHandlerLess}>
+        -
+      </button>
       <div className="m-4">{counter}</div>
-      <button className="btn m-1" onClick={clickHandlerAdd}>
+      <button className="btn btn-xs m-1 rounded-full" onClick={clickHandlerAdd}>
         +
       </button>
     </div>

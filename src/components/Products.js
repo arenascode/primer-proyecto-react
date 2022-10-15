@@ -14,6 +14,7 @@ const products = [
     prop4: "Mejora las funciones cerebrales.",
     prop5: "Ayuda a dormir mejor.",
     uso: "Se recomiendan dosis de entre 3 y 6 gramos diarios. Es preferible dividir la dosis diaria en varias tomas, haciendo coincidir una de ellas una o dos horas antes de acostarse. Se recomienda un uso continuado y extendido en el tiempo para experimentar los mayores beneficios.",
+    stock: 15,
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ const products = [
     prop4: "Mejora la fertilidad.",
     prop5: "Vigorizante sexual.",
     uso: "La forma de preparación más usada es en infusiones, donde se toma tanto el hongo como el caldo resultante de la cocción. Otra manera tradicional de ingerirlo es añadiéndolo troceado en recetas de cerdo, pollo o pato.",
+    stock: 15,
   },
   {
     id: 3,
@@ -46,6 +48,7 @@ const products = [
     prop4: "Mejora el sistema inmune.",
     prop5: "Ayuda a reducir azucar en sangre.",
     uso: "El producto se consume normalmente en polvo, en forma de cápsulas o en comprimidos. También se usa en infusión. El mejor momento para tomar eleuthero es por la mañana, o a comienzos de la tarde, para evitar eventuales problemas de sueño.",
+    stock: 15,
   },
   {
     id: 4,
@@ -62,6 +65,7 @@ const products = [
     prop4: "Ayuda al sistema cardiovascular.",
     prop5: "Aumenta la calidad de vida en la vejez.",
     uso: "Por lo general, la raíz es el elemento más valioso del ginseng, y se utiliza en la elaboración de cápsulas, comprimidos, cremas y jarabes. puesto que, la dosis adecuada puede variar en función de las necesidades de cada paciente, lo correcto es consultar con un médico o farmacéutico antes de usarla. Ahora conocerás mejor sus formas de presentación. ",
+    stock: 15,
   },
   {
     id: 5,
@@ -78,6 +82,7 @@ const products = [
     prop4: "Reduce el riesgo de cancer.",
     prop5: "Protege el corazón.",
     uso: "Se puede consumir en infusiones, extractos o tinturas, pero no hay cómo hacer una infusión de las hojas frescas, pues la albahaca sagrada tiene un aroma y sabor deliciosos. Se puede servir como un té frío o caliente, sólo o en combinación con otras hierbas y especias como la canela, pimienta gorda o cayena.",
+    stock: 15,
   },
   {
     id: 6,
@@ -94,6 +99,7 @@ const products = [
     prop4: "Contribuye a la salud del cabello.",
     prop5: "ayudar a limpiar manchas y emparejar el tono de la piel.",
     uso: "Uno de los métodos más tradicionales y extendidos de tomar regaliz es masticar o chupar la raíz de esta planta, y es que esta es la parte que más se utiliza para aprovechar los múltiples usos medicinales y propiedades del regaliz.",
+    stock: 15,
   },
   {
     id: 7,
@@ -110,6 +116,7 @@ const products = [
     prop4: "Estimulante de la libido.",
     prop5: "Favorece la respusta inmunitaria.",
     uso: "Las dosis genéricas recomendadas son de 170 a 185 mg diarios, con los que se asegura una absorción de 4,5 mg de rodiolosida, su componente terapéuticamente más activo.",
+    stock: 15,
   },
   {
     id: 8,
@@ -126,6 +133,7 @@ const products = [
     prop4: "Aumenta el rendimiento físico y mental.",
     prop5: "Ayuda a combatir el estrés y la ansiedad.",
     uso: "Es habitual encontrar schisandra en forma de suplementos, pero también puede tomarse en infusión o ensalivando las semillas con diferentes fines",
+    stock: 15,
   },
   {
     id: 9,
@@ -142,6 +150,7 @@ const products = [
     prop4: "Retrasa el deterioro cognitivo.",
     prop5: "Util en el tratamiento de la anemia.",
     uso: "Tomar una o dos veces al día acompañado en agua o leche. Se recomienda empezar con un máximo de 300mg al día.",
+    stock: 15,
   },
 ];
 
