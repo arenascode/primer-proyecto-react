@@ -1,73 +1,86 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
+import ItemCount from "./ItemCount";
 import { products } from "./Products";
 
 const ProductDetail = ({ item }) => {
   return (
     <div className="containerProductDetail flex-1">
-      <div class="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-        <div class="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
-          <img
-            src={item.img}
-            alt="Two each of gray, white, and black shirts laying flat."
-            class="h-full w-full object-cover object-center"
-          />
+      <div className="flex flex-row">
+        <div class=" productPhoto m-10">
+          <div class=" overflow-hidden rounded-lg lg:block h-80 w-80">
+            <img
+              src={item.img}
+              alt=""
+              class="h-full w-full object-cover object-center"
+            />
+          </div>
+        </div>
+        <div className="buyDetails">
+          <ItemCount />
         </div>
       </div>
       {/* Product Info  */}
-      <div className="productInfo m-10 flex">
-      <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 content-center">
-        <h1 class=" font-bold tracking-normal text-gray-900 sm:text-3xl m-auto text-justify">
-          {item.name}
+      <div className="productDescription m-10 flex">
+        <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 content-center">
+          <h1 class=" font-bold tracking-normal text-gray-900 sm:text-3xl m-auto text-justify">
+            {item.name}
           </h1>
           <div class="space-y-6">
-          <p class="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
-            {item.Description}
-          </p>
+            <p class="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
+              {item.Description}
+            </p>
           </div>
         </div>
 
+        <div class="properties ml-8 lg:border-r lg:border-gray-200">
+          <h1 class="font-bold tracking-normal text-gray-900 sm:text-3xl m-auto text-justify">
+            Propiedades
+          </h1>
 
-      <div class="properties">
-        <h1 class="font-semibold text-gray-900">Propiedades</h1>
+          <div class="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
+            <ul class="list-disc space-y-3 pl-4 text-m">
+              <li class="text-gray-900">
+                <span class="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
+                  Reduce el estrés
+                </span>
+              </li>
 
-        <div class="mt-4">
-          <ul class="list-disc space-y-2 pl-4 text-sm">
-            <li class="text-gray-400">
-              <span class="text-gray-600">Hand cut and sewn locally</span>
-            </li>
+              <li class="">
+                <span class="">Reduce el azucar en sangre</span>
+              </li>
 
-            <li class="text-gray-400">
-              <span class="text-gray-600">
-                Dyed with our proprietary colors
-              </span>
-            </li>
+              <li class="">
+                <span class="">Ayuda a aumentar la masa muscular</span>
+              </li>
 
-            <li class="text-gray-400">
-              <span class="text-gray-600">Pre-washed &amp; pre-shrunk</span>
-            </li>
+              <li class="">
+                <span class="">Mejora las funciones cerebrales</span>
+              </li>
+              <li class="">
+                <span class="">Ayuda a dormir mejor</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-            <li class="text-gray-400">
-              <span class="text-gray-600">Ultra-soft 100% cotton</span>
-            </li>
-          </ul>
+        <div class="recomendedUse ml-8 w-80 text-justify">
+          <h2 class="font-bold tracking-normal text-gray-900 sm:text-3xl m-auto text-justify">
+            ¿Cómo se usa?
+          </h2>
+
+          <div class="mt-4 space-y-6">
+            <p class="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
+              Se recomiendan dosis de entre 3 y 6 gramos diarios. Es preferible
+              dividir la dosis diaria en varias tomas, haciendo coincidir una de
+              ellas una o dos horas antes de acostarse. <br />
+              Se recomienda un uso continuado y extendido en el tiempo para
+              experimentar los mayores beneficios.
+            </p>
+          </div>
         </div>
       </div>
-
-      <div class="mt-10 w-80 text-justify">
-        <h2 class="text-sm font-medium text-gray-900">Details</h2>
-
-        <div class="mt-4 space-y-6">
-          <p class="text-sm text-gray-600">
-            The 6-Pack includes two black, two white, and two heather gray Basic
-            Tees. Sign up for our subscription service and be the first to get
-            new, exciting colors, like our upcoming &quot;Charcoal Gray&quot;
-            limited release.
-          </p>
-        </div>
-      </div>
-      </div>
-      </div>
+    </div>
   );
 }
 
