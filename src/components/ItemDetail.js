@@ -7,26 +7,95 @@ const ProductDetail = ({ item }) => {
   return (
     <div className="containerProductDetail flex-1">
       <div className="flex flex-row">
-        <div class=" productPhoto m-10">
-          <div class=" overflow-hidden rounded-lg lg:block h-80 w-80">
+        <div class=" photoandBuyDetails m-10 flex bg-#78716c">
+          {/* Container buy, stock, addCart info */}
+          <div className=" productPhoto overflow-hidden rounded-lg lg:block h-80 w-80 flex">
             <img
               src={item.img}
               alt=""
               class="h-full w-full object-cover object-center"
             />
           </div>
-        </div>
-        <div className="buyDetails">
-          <ItemCount item={ item } />
+          <div className="buyDetails artboard artboard-horizontal phone-1 ml-10 bg-base-300 rounded-md">
+            <h1 className="font-bold tracking-normal text-gray-900 sm:text-3xl mt-3 text-justify ml-3 ">
+              {item.name}
+            </h1>
+            <nav aria-label="Breadcrumb">
+              <ol
+                role="list"
+                class="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
+              >
+                <li>
+                  <div class="flex items-center">
+                    <a href="#" class="mr-2 text-sm font-medium text-gray-900">
+                      Catálogo
+                    </a>
+                    <svg
+                      width="16"
+                      height="20"
+                      viewBox="0 0 16 20"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      class="h-5 w-4 text-gray-300"
+                    >
+                      <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                    </svg>
+                  </div>
+                </li>
+
+                <li>
+                  <div class="flex items-center">
+                    <a href="#" class="mr-2 text-sm font-medium text-gray-900">
+                      Adaptogenos
+                    </a>
+                    <svg
+                      width="16"
+                      height="20"
+                      viewBox="0 0 16 20"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      class="h-5 w-4 text-gray-300"
+                    >
+                      <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
+                    </svg>
+                  </div>
+                </li>
+
+                <li class="text-sm">
+                  <a
+                    href="#"
+                    aria-current="page"
+                    class="font-medium text-gray-500 hover:text-gray-600"
+                  >
+                    Aswhagandha
+                  </a>
+                </li>
+              </ol>
+            </nav>
+            <h2 className="price text-lg mt-3 ml-3 ">Precio: ${item.Precio}</h2>
+            <h2 className="price text-lg mt-3 ml-3 ">
+              Especie: {item.especie}
+            </h2>
+            <h2 className="price text-lg mt-3 ml-3 ">
+              Cantidad: {item.Cantidad}
+            </h2>
+            <div className=" relative cardActions flex flex-center">
+              <ItemCount item={item} className="" />
+              <div><button className="btn btn-xs justify-center">
+                Agregar al Carrito
+              </button></div>
+              
+            </div>
+          </div>
         </div>
       </div>
-      {/* Container buy, stock, addCart info */}
-      
       {/* Product Info  */}
       <div className="productDescription m-10 flex">
         <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 content-center">
           <h1 class=" font-bold tracking-normal text-gray-900 sm:text-3xl m-auto text-justify">
-            {item.name}
+            ?Qué es?
           </h1>
           <div class="space-y-6">
             <p class="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
@@ -99,7 +168,7 @@ const ItemDetail = () => {
   const getItemDetail = () => {
     return new Promise((resolve) => {
       setTimeout(() =>
-      resolve(products.find(p => p.id == itemId)), 1000)
+      resolve(products.find(p => p.id == itemId)), 500)
       
     })
   }

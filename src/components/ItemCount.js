@@ -23,11 +23,14 @@ console.log(item.stock);
   }
   
   return (
-    <div className="flex itemCount justify-center align">
-      <button className="btn btn-xs m-1 rounded-full" onClick={clickHandlerLess}>
+    <div className="flex itemCount justify-center border border-amber-800 min-w-min">
+      <button
+        className="btn btn-xs m-1 rounded-full"
+        onClick={clickHandlerLess}
+      >
         -
       </button>
-      <div className="m-4">{counter}</div>
+      <div className="m-1">{counter}</div>
       <button className="btn btn-xs m-1 rounded-full" onClick={clickHandlerAdd}>
         +
       </button>
