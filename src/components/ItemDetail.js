@@ -9,7 +9,7 @@ const ProductDetail = ({ item }) => {
       <div className="flex flex-row">
         <div class=" photoandBuyDetails m-10 flex bg-#78716c">
           {/* Container buy, stock, addCart info */}
-          <div className=" productPhoto overflow-hidden rounded-lg lg:block h-80 w-80 flex">
+          <div className=" productPhoto overflow-hidden rounded-lg lg:block h-80 w-82 flex">
             <img
               src={item.img}
               alt=""
@@ -79,14 +79,19 @@ const ProductDetail = ({ item }) => {
               Especie: {item.especie}
             </h2>
             <h2 className="price text-lg mt-3 ml-3 ">
-              Cantidad: {item.Cantidad}
+              Cantidad: Pack por {item.Cantidad}
             </h2>
-            <div className=" relative cardActions flex flex-center">
-              <ItemCount item={item} className="" />
-              <div><button className="btn btn-xs justify-center">
-                Agregar al Carrito
-              </button></div>
-              
+            <div className=" relative cardActions flex-column flex-center m-5">
+              <ItemCount item={item} />
+              <p className="mt-3">Stock: {item.stock} Unidades</p>
+              <div className="cardButtons flex flex-grow mb-3">
+                <button className="btn btn-xs justify-center mt-3">
+                  Agregar al Carrito
+                </button>
+                <button className="btn btn-xs justify-end mt-3">
+                  Ir al Carrito
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -95,7 +100,7 @@ const ProductDetail = ({ item }) => {
       <div className="productDescription m-10 flex">
         <div class="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 content-center">
           <h1 class=" font-bold tracking-normal text-gray-900 sm:text-3xl m-auto text-justify">
-            ?Qué es?
+            ¿Qué es?
           </h1>
           <div class="space-y-6">
             <p class="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
