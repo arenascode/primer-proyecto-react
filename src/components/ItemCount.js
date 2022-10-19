@@ -4,9 +4,11 @@ import {ItemDetail} from "./ItemDetail";
 const ItemCount = ({ item }) => {
 
   const [counter, setCounter] = useState(1)
+  const [addCart, setAddCart] = useState([])
 
   const addToCartDisable = document.getElementById("btnAddToCart");
   
+
   if (counter <= 0) {
     addToCartDisable.setAttribute("disabled", "disabled");
   } else {
@@ -37,9 +39,12 @@ const ItemCount = ({ item }) => {
   const addToCart = () => {
     if (counter >= 1) {
       console.log("añadite un item al carrito");
+      setAddCart(counter)
+      console.log(addCart);
     } else {
       console.log("don't do anything");
     }
+    setCounter(0)
   }
 
   return (

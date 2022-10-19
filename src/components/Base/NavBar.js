@@ -11,14 +11,10 @@ const NavBar = () => {
       <div className="navbar-start hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
-            <Link to={"/"}>
-            Home
-            </Link>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/catalogo"}>
-              Catálogo
-            </Link>
+            <Link to={"/catalogo"}>Catálogo</Link>
           </li>
           <li tabIndex={0}>
             <Link>
@@ -42,9 +38,9 @@ const NavBar = () => {
               </li>
             </ul>
           </li>
-          <Link>
-            Contacto
-          </Link>
+          <li>
+            <Link>Contacto</Link>
+          </li>
         </ul>
       </div>
       <div className="flex-none">
@@ -76,7 +72,9 @@ const NavBar = () => {
               <span className="font-bold text-lg">0 Items</span>
               <span className="text-info">Subtotal: $0</span>
               <div className="card-actions">
-                <button className="btn btn-primary btn-block">View cart</button>
+                <button className="btn btn-xs  justify-end mt-3">
+                  <Link to={"/cart"}>Ir al Carrito</Link>
+                </button>
               </div>
             </div>
           </div>
