@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { products } from "./Products";
+import ItemDetail from "./ItemDetail"
 
 const ProductCard = ({ id, name, especie, precio, cantidad, img, Description, stock }) => {
   return (

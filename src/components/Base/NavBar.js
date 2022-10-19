@@ -12,16 +12,16 @@ const NavBar = () => {
         <ul className="menu menu-horizontal p-0">
           <li>
             <Link to={"/"}>
-              <a>Home</a>
+            Home
             </Link>
           </li>
           <li>
             <Link to={"/catalogo"}>
-              <a>Catálogo</a>
+              Catálogo
             </Link>
           </li>
           <li tabIndex={0}>
-            <a>
+            <Link>
               Sobre el Uso de Adaptogenos
               <svg
                 className="fill-current"
@@ -32,19 +32,19 @@ const NavBar = () => {
               >
                 <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
               </svg>
-            </a>
+            </Link>
             <ul className="p-2">
               <li>
-                <a>Submenu 1</a>
+                <Link>Submenu 1</Link>
               </li>
               <li>
-                <a>Submenu 2</a>
+                <Link>Submenu 2</Link>
               </li>
             </ul>
           </li>
-          <li>
-            <a>Contacto</a>
-          </li>
+          <Link>
+            Contacto
+          </Link>
         </ul>
       </div>
       <div className="flex-none">

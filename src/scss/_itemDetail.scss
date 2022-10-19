@@ -1,3 +1,7 @@
+.itemCountContainer {
+  align-items: center;
+  column-gap: 10px;
+}
 .itemCount {
   align-items: center;
   border-radius: 10px;
@@ -8,4 +12,8 @@
 .cardButtons {
   display: flex;
   justify-content: space-between;
+}
+
+.addToCart {
+  align-self: center;
 }

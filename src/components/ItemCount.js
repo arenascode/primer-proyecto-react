@@ -2,7 +2,7 @@ import { useState } from "react";
 import {ItemDetail} from "./ItemDetail";
 
 const ItemCount = ({ item }) => {
-console.log(item.stock);
+
   const [counter, setcounter] = useState(1)
   
   const clickHandlerAdd = () => {
@@ -22,18 +22,32 @@ console.log(item.stock);
     }
   }
   
+  const addToCart = () => {
+  console.log("Esto debería agregar los productos al carrito");
+  }
+
   return (
-    <div className="flex itemCount justify-center border border-amber-800 min-w-min">
-      <button
-        className="btn btn-xs m-1 rounded-full"
-        onClick={clickHandlerLess}
-      >
-        -
-      </button>
-      <div className="m-1">{counter}</div>
-      <button className="btn btn-xs m-1 rounded-full" onClick={clickHandlerAdd}>
-        +
-      </button>
+    <div className=" itemCountContainer flex flex-center">
+      <div className="flex itemCount justify-center border border-amber-800">
+        <button
+          className="btn btn-xs m-1 rounded-full"
+          onClick={clickHandlerLess}
+        >
+          -
+        </button>
+        <div className="m-1">{counter}</div>
+        <button
+          className="btn btn-xs m-1 rounded-full"
+          onClick={clickHandlerAdd}
+        >
+          +
+        </button>
+      </div>
+      <div className="addToCart">
+        <button onClick={addToCart} className="btn btn-xs justify-center">
+          Agregar al Carrito
+        </button>
+      </div>
     </div>
   );
 }
