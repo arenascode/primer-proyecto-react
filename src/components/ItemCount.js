@@ -3,12 +3,23 @@ import {ItemDetail} from "./ItemDetail";
 
 const ItemCount = ({ item }) => {
 
-  const [counter, setcounter] = useState(1)
+  const [counter, setCounter] = useState(1)
+
+  const addToCartDisable = document.getElementById("btnAddToCart");
   
+  if (counter <= 0) {
+    addToCartDisable.setAttribute("disabled", "disabled");
+  } else {
+    console.log("don't disabled nothing");
+  }
+
+
   const clickHandlerAdd = () => {
     console.log('Clicked add');
     if (counter < item.stock) {
-      setcounter(counter + 1)
+      setCounter(counter + 1)
+      addToCartDisable.removeAttribute("disabled")
+
     } else {
       alert('Superaste el limite de stock disponible');
     }
@@ -16,14 +27,19 @@ const ItemCount = ({ item }) => {
   const clickHandlerLess = () => {
     console.log('Clicked Subtract');
     if (counter >= 1) {
-      setcounter(counter - 1)
+      setCounter(counter - 1)
     } else {
+      
       console.log('No puedes restar cantidades negativas');
     }
   }
   
   const addToCart = () => {
-  console.log("Esto debería agregar los productos al carrito");
+    if (counter >= 1) {
+      console.log("añadite un item al carrito");
+    } else {
+      console.log("don't do anything");
+    }
   }
 
   return (
@@ -44,7 +60,7 @@ const ItemCount = ({ item }) => {
         </button>
       </div>
       <div className="addToCart">
-        <button onClick={addToCart} className="btn btn-xs justify-center">
+        <button id='btnAddToCart' onClick={addToCart} className="btn btn-xs justify-center">
           Agregar al Carrito
         </button>
       </div>

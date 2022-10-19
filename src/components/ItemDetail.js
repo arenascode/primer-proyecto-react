@@ -5,10 +5,6 @@ import { products } from "./Products";
 
 const ProductDetail = ({ item }) => {
   
-  const addToCart = () => {
-  
-  }
-  
   return (
     <div className="containerProductDetail flex-1">
       <div className="flex flex-row">
@@ -26,12 +22,13 @@ const ProductDetail = ({ item }) => {
               {item.name}
             </h1>
             <nav aria-label="Breadcrumb">
-              <ol
-                className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8"
-              >
+              <ol className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
                 <li>
                   <div className="flex items-center">
-                    <Link to={"/catalogo"} className="mr-2 text-sm font-medium text-gray-900">
+                    <Link
+                      to={"/catalogo"}
+                      className="mr-2 text-sm font-medium text-gray-900"
+                    >
                       Catálogo
                     </Link>
                     <svg
@@ -68,7 +65,8 @@ const ProductDetail = ({ item }) => {
                 </li>
 
                 <li className="text-sm">
-                  <Link to={'/catalogo/product/:id'}
+                  <Link
+                    to={"/catalogo/product/:id"}
                     href="#"
                     aria-current="page"
                     className="font-medium text-gray-500 hover:text-gray-600"
@@ -90,10 +88,11 @@ const ProductDetail = ({ item }) => {
               <p className="mt-3">Stock: {item.stock} Unidades</p>
               <div className="cardButtons flex flex-grow mb-3">
                 {/* Add to cart */}
-                
-                <button className="btn btn-xs justify-end mt-3">
-                  Ir al Carrito
-                </button>
+                <Link to={"/cart"}>
+                  <button className="btn btn-xs justify-end mt-3">
+                    Ir al Carrito
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
