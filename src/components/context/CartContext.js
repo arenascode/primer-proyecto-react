@@ -24,7 +24,7 @@ const CartContextProvider = ({ children }) => {
   }
 
   const deleteItem = (id) => {
-
+  
   }
 
   const context = {

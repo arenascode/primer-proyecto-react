@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import { products } from "./Products";
 import ItemDetail from "./ItemDetail"
+import { useCart } from "./context/CartContext";
 
 const ProductCard = ({ id, name, especie, precio, cantidad, img, Description, stock }) => {
+
   return (
     <div className="flex-inline">
       <div className="card w-80 glass">
@@ -18,7 +20,7 @@ const ProductCard = ({ id, name, especie, precio, cantidad, img, Description, st
               <button className="btn btn-xs">Ver Más</button>
             </Link>
             <Link className="ml-5">
-              <button className="btn btn-xs">Agregar al Carrito</button>
+              <button  className="btn btn-xs">Agregar al Carrito</button>
             </Link>
           </div>
         </div>

@@ -38,9 +38,13 @@ const ItemCount = ({ item }) => {
   }
   
   const addHandler = () => {
+
+    for (let i = 1; i <= counter; i++ ) {
     addToCart(item)
+    console.log(counter);
     console.log(item);
     console.log(cartList);
+    }
   }
   // const addToCart = () => {
   //   if (counter >= 1) {
