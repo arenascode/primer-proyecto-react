@@ -5,6 +5,8 @@ const Cart = () => {
 
  const  {cartList, removeList, count } = useCart()
 
+  console.log(cartList);
+
   return (
     <div>
       Cart

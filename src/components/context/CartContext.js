@@ -5,7 +5,7 @@ const CartContext = createContext({
   cartList: [],
   addToCart: () => { },
   removeList: () => { },
-  count: 0
+  count: 0,
 });
 
 export const useCart = () => {
@@ -15,8 +15,8 @@ const CartContextProvider = ({ children }) => {
   
   const [cartList, setCartList] = useState([]);
 
-  const addToCart = (product) => {
-   setCartList(cartList => cartList.concat(product))
+  const addToCart = (item) => {
+   setCartList(cartList => cartList.concat(item))
   }
 
   const removeList = () => {

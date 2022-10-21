@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { useCart } from "./context/CartContext";
 import {ItemDetail} from "./ItemDetail";
 
 const ItemCount = ({ item }) => {
 
   const [counter, setCounter] = useState(1)
-  const [addCart, setAddCart] = useState([])
+  const {addToCart, cartList} = useCart()
 
   const addToCartDisable = document.getElementById("btnAddToCart");
   
@@ -36,16 +37,21 @@ const ItemCount = ({ item }) => {
     }
   }
   
-  const addToCart = () => {
-    if (counter >= 1) {
-      console.log("añadite un item al carrito");
-      setAddCart(counter)
-      console.log(addCart);
-    } else {
-      console.log("don't do anything");
-    }
-    setCounter(0)
+  const addHandler = () => {
+    addToCart(item)
+    console.log(item);
+    console.log(cartList);
   }
+  // const addToCart = () => {
+  //   if (counter >= 1) {
+  //     console.log("añadite un item al carrito");
+  //     setAddCart(counter)
+  //     console.log(addCart);
+  //   } else {
+  //     console.log("don't do anything");
+  //   }
+  //   setCounter(0)
+  // }
 
   return (
     <div className=" itemCountContainer flex flex-center">
@@ -65,7 +71,7 @@ const ItemCount = ({ item }) => {
         </button>
       </div>
       <div className="addToCart">
-        <button id='btnAddToCart' onClick={addToCart} className="btn btn-xs justify-center">
+        <button id='btnAddToCart' onClick={addHandler} className="btn btn-xs justify-center">
           Agregar al Carrito
         </button>
       </div>
