@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { useCart } from "./context/CartContext"
+import ItemCart from "./itemCart"
 
 const Cart = () => {
 
@@ -10,9 +11,8 @@ const Cart = () => {
   return (
     <div>
       Cart
-      {cartList.map((p) => (
-        <div className="overflow-x-auto w-full">
-          <table className="table w-full">
+        <div className="overflow-x-auto w-min">
+          <table className="table w-min">
             {/* <!-- head --> */}
             <thead>
               <tr>
@@ -25,7 +25,12 @@ const Cart = () => {
             </thead>
             <tbody>
               {/* <!-- row 1 --> */}
-              <tr>
+              {cartList.map((p) => (
+                <div>
+                  <ItemCart key={p.id} {...p} />
+                </div>
+              ))}
+              {/* <tr>
                 <td>
                   <div className="flex items-center space-x-3">
                     <div className="avatar">
@@ -44,12 +49,11 @@ const Cart = () => {
                 </td>
                 <td>${p.Precio}</td>
                 <td className="font-bold">a codificar</td>
-              </tr>
+              </tr> */}
               {/* <!-- row 2 --> */}
             </tbody>
           </table>
         </div>
-      ))}
     </div>
   );
 }
