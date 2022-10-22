@@ -11,7 +11,7 @@ const ProductCart = ({name, especie, Precio}) => {
   
   console.log(cartList);
   return (
-  <div>
+  <>
     {cartList.map((p) => (
         <tr>
           <td>
@@ -33,7 +33,7 @@ const ProductCart = ({name, especie, Precio}) => {
         </tr>
       ))
     }
-    </div>
+    </>
   )
 }
 
