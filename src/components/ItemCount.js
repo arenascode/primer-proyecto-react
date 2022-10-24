@@ -22,6 +22,7 @@ const ItemCount = ({ item }) => {
     if (counter < item.stock) {
       setCounter(counter + 1)
       addToCartDisable.removeAttribute("disabled")
+      console.log(counter);
 
     } else {
       alert('Superaste el limite de stock disponible');
@@ -39,12 +40,10 @@ const ItemCount = ({ item }) => {
   
   const addHandler = () => {
 
-    for (let i = 1; i <= counter; i++ ) {
-    addToCart(item)
-    console.log(counter);
+    addToCart(item, counter)
     console.log(item);
     console.log(cartList);
-    }
+  
   }
   // const addToCart = () => {
   //   if (counter >= 1) {
@@ -82,5 +81,7 @@ const ItemCount = ({ item }) => {
     </div>
   );
 }
+
+
 
 export default ItemCount

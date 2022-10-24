@@ -1,22 +1,41 @@
 import { createContext, useContext, useState } from "react";
-
+import ItemCount from "../ItemCount";
 
 const CartContext = createContext({
   cartList: [],
   addToCart: () => { },
   removeList: () => { },
-  count: 0,
+  counter: 0,
+  deleteItem: () => { }
 });
 
 export const useCart = () => {
   return useContext(CartContext);
 };
+
 const CartContextProvider = ({ children }) => {
   
   const [cartList, setCartList] = useState([]);
 
-  const addToCart = (item) => {
-   setCartList(cartList => cartList.concat(item))
+  const addToCart = (item, counter) => {
+
+    if (isInCart(item)) {
+      const itemFound = cartList.find(p => p.id == item.id)
+      console.log(counter);
+      itemFound.quantity += counter
+    } else {
+      item.quantity = counter
+      setCartList(cartList => cartList.concat(item))
+      console.log("acá no lo encontró");
+    } 
+    console.log(isInCart(item));
+    console.log(cartList);
+    }
+    
+  
+
+  const isInCart = (item) => {
+    return cartList.some(p => p.id == item.id)
   }
 
   const removeList = () => {
@@ -24,7 +43,12 @@ const CartContextProvider = ({ children }) => {
   }
 
   const deleteItem = (id) => {
-  
+    const productToDelete = cartList.findIndex((p) => (p.id == id));
+    console.log(productToDelete);
+    
+    setCartList(cartList.splice(productToDelete, 1))
+    
+    console.log(cartList);
   }
 
   const context = {
@@ -32,7 +56,7 @@ const CartContextProvider = ({ children }) => {
     addToCart: addToCart,
     removeList: removeList,
     deleteItem: deleteItem,
-    count: cartList.length
+    counter: cartList.length
   }
 
   return (
