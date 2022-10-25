@@ -8,6 +8,11 @@ const Cart = () => {
 
   // console.log(cartList);
 
+  const subTotal = (cartList) => {
+  cartList.map()
+  }
+
+
   return (
     <div className="flex gap-2">
       <div className="overflow-x-auto w-min CartList border-2 m-3">
@@ -26,15 +31,16 @@ const Cart = () => {
           <tbody>
             {/* <!-- row 1 --> */}
             {cartList.map((p) => (
-              <ItemCart key={p.id} {...p} />
+              <ItemCart key={p.id} p={p} />
             ))}
             {/* <!-- row 2 --> */}
           </tbody>
         </table>
       </div>
       <div className="buyDetails border-2 m-3">
-        <h1 className="text-center">Buy details</h1>
-        <h2>Items: { counter }</h2>
+        <h1 className="text-center">Buy Details</h1>
+        <h2>Items: {counter}</h2>
+        <h2>Subtotal: </h2>
         <hr/>
       </div>
     </div>
