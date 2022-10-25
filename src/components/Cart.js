@@ -4,15 +4,11 @@ import ItemCart from "./itemCart"
 
 const Cart = () => {
 
- const  {cartList, removeList, counter } = useCart()
+ const  {cartList, removeList, counter, getTotal, subtotal } = useCart()
 
   // console.log(cartList);
-
-  const subTotal = (cartList) => {
-  cartList.map()
-  }
-
-
+  
+ 
   return (
     <div className="flex gap-2">
       <div className="overflow-x-auto w-min CartList border-2 m-3">
@@ -40,7 +36,7 @@ const Cart = () => {
       <div className="buyDetails border-2 m-3">
         <h1 className="text-center">Buy Details</h1>
         <h2>Items: {counter}</h2>
-        <h2>Subtotal: </h2>
+        <h2>Subtotal:{getTotal()} </h2>
         <hr/>
       </div>
     </div>

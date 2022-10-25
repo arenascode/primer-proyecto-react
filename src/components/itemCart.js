@@ -1,6 +1,8 @@
 import { useCart } from "./context/CartContext";
 const ProductCart = ({ p }) => {
+
   const { removeList, deleteItem } = useCart();
+  
   const deleteProductCart = (p) => {
     console.log("al presionar este botón debería borrarse el producto");
     deleteItem(p.target.id);

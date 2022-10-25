@@ -7,7 +7,9 @@ const CartContext = createContext({
   removeList: () => { },
   counter: 0,
   deleteItem: () => { },
-  cartQuantity: 0
+  cartQuantity: 0,
+  getTotal: () => { },
+  subtotal: 0
 });
 
 export const useCart = () => {
@@ -50,12 +52,23 @@ const CartContextProvider = ({ children }) => {
     setCartList(newArrayCart)
   }
 
+  let subtotal = 0;
+  
+  const getTotal = () => {
+   cartList.forEach((i) => (subtotal += i.quantity * i.Precio));
+    console.log(subtotal);
+    return subtotal;
+ };
+
+
   const context = {
     cartList: cartList,
     addToCart: addToCart,
     removeList: removeList,
     deleteItem: deleteItem,
     counter: cartList.length,
+    getTotal: getTotal,
+    subtotal: subtotal,
     // cartQuantity: cartList.length
   }
 

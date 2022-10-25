@@ -6,7 +6,7 @@ import { products } from "./Products";
 
 const ProductDetail = ({ item }) => {
   
-  const { addToCart, cartList, counter} =useCart()
+  const { addToCart, cartList, counter, getTotal} =useCart()
  
   const addHandler = () => {
     addToCart(item, counter);
