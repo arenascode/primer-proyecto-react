@@ -41,8 +41,6 @@ const ItemCount = ({ item }) => {
   const addHandler = () => {
 
     addToCart(item, counter)
-    console.log(item);
-    console.log(cartList);
   
   }
   // const addToCart = () => {

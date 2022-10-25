@@ -21,12 +21,12 @@ const CartContextProvider = ({ children }) => {
 
     if (isInCart(item)) {
       const itemFound = cartList.find(p => p.id == item.id)
-      console.log(counter);
+      console.log(itemFound);
       itemFound.quantity += counter
     } else {
       item.quantity = counter
       setCartList(cartList => cartList.concat(item))
-      console.log("acá no lo encontró");
+      console.log("Not found it. Has been created");
     } 
     console.log(isInCart(item));
     console.log(cartList);
@@ -43,12 +43,10 @@ const CartContextProvider = ({ children }) => {
   }
 
   const deleteItem = (id) => {
-    const productToDelete = cartList.findIndex((p) => (p.id == id));
-    console.log(productToDelete);
-    
-    setCartList(cartList.splice(productToDelete, 1))
-    
-    console.log(cartList);
+    console.log(id);
+    const newArrayCart = cartList.filter((p) => p.id != id)
+    console.log(newArrayCart)
+    setCartList(newArrayCart)
   }
 
   const context = {

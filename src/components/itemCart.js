@@ -13,11 +13,10 @@ const ProductCart = ({ name, especie, Precio }) => {
   }
   
   
-  console.log(cartList);
   return (
     <>
       {cartList.map((p) => (
-        <tr>
+        <tr key={p.id}>
           <td className="productTableCart">
             <div className="flex items-center space-x-3">
               <div className="avatar">
