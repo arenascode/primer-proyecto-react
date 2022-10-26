@@ -6,13 +6,13 @@ const Cart = () => {
 
  const  {cartList, removeList, counter, getTotal, subtotal } = useCart()
 
-  // console.log(cartList);
-  
+let deliveryCost = 600
+
  
   return (
     <div className="flex gap-2">
-      <div className="overflow-x-auto w-min CartList border-2 m-3">
-        <h1 className="text-center">Contenido de tu Carrito</h1>
+      <div className="overflow-x-auto w-min CartList border-2 m-5">
+        <h1 className="text-center"><strong>Contenido de tu Carrito</strong></h1>
         <table className="table w-min">
           {/* <!-- head --> */}
           <thead>
@@ -33,11 +33,29 @@ const Cart = () => {
           </tbody>
         </table>
       </div>
-      <div className="buyDetails border-2 m-3">
-        <h1 className="text-center">Buy Details</h1>
-        <h2>Items: {counter}</h2>
-        <h2>Subtotal:{getTotal()} </h2>
-        <hr/>
+      <div className="buyDetails border-2 m-5 w-72 bg-stone-100">
+        <div className="buyDetailsTitle bg-stone-200 mt-0">
+          <h1 className="text-center h-10 pt-2">
+            <strong>Detalle de tu Compra</strong>
+          </h1>
+        </div>
+        <hr />
+        <div className="flex flex-col gap-2 p-2">
+          <h2>
+            <strong>Items: </strong> {counter}
+          </h2>
+          <h2>
+            <strong>Subtotal: </strong>
+            {getTotal()}{" "}
+          </h2>
+          <h2>
+            <strong>Envío:</strong> {deliveryCost}
+          </h2>
+        </div>
+        <div className="bg-stone-200 border-t-2 border-slate-400">
+          <strong className="p-3 pt-4">Total: {getTotal() + deliveryCost}</strong>
+        </div>
+        <hr />
       </div>
     </div>
   );
