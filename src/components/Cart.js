@@ -10,9 +10,11 @@ let deliveryCost = 600
 
  
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 relative">
       <div className="overflow-x-auto w-min CartList border-2 m-5">
-        <h1 className="text-center"><strong>Contenido de tu Carrito</strong></h1>
+        <h1 className="text-center">
+          <strong>Contenido de tu Carrito</strong>
+        </h1>
         <table className="table w-min">
           {/* <!-- head --> */}
           <thead>
@@ -24,16 +26,16 @@ let deliveryCost = 600
               <th> borrar </th>
             </tr>
           </thead>
-          <tbody>
-            {/* <!-- row 1 --> */}
-            {cartList.map((p) => (
-              <ItemCart key={p.id} p={p} />
-            ))}
-            {/* <!-- row 2 --> */}
-          </tbody>
+            <tbody>
+              {/* <!-- row 1 --> */}
+              {cartList.map((p) => (
+                <ItemCart key={p.id} p={p} />
+              ))}
+              {/* <!-- row 2 --> */}
+            </tbody>
         </table>
       </div>
-      <div className="buyDetails border-2 m-5 w-72 bg-stone-100">
+      <div className="buyDetails border-2 m-5 w-72 bg-stone-100 h-min sticky top-0">
         <div className="buyDetailsTitle bg-stone-200 mt-0">
           <h1 className="text-center h-10 pt-2">
             <strong>Detalle de tu Compra</strong>
@@ -53,7 +55,9 @@ let deliveryCost = 600
           </h2>
         </div>
         <div className="bg-stone-200 border-t-2 border-slate-400">
-          <strong className="p-3 pt-4">Total: {getTotal() + deliveryCost}</strong>
+          <strong className="p-3 pt-4">
+            Total: {getTotal() + deliveryCost}
+          </strong>
         </div>
         <hr />
       </div>
