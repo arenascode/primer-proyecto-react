@@ -4,7 +4,7 @@ import ItemCart from "./itemCart"
 
 const Cart = () => {
 
- const  {cartList, removeList, counter, getTotal, subtotal, cartQuantity } = useCart()
+ const  {cartList, removeList, counter, getTotal, subtotal, cartQty } = useCart()
 
 let deliveryCost = 600
 
@@ -26,13 +26,13 @@ let deliveryCost = 600
               <th> borrar </th>
             </tr>
           </thead>
-            <tbody>
-              {/* <!-- row 1 --> */}
-              {cartList.map((p) => (
-                <ItemCart key={p.id} p={p} />
-              ))}
-              {/* <!-- row 2 --> */}
-            </tbody>
+          <tbody>
+            {/* <!-- row 1 --> */}
+            {cartList.map((p) => (
+              <ItemCart key={p.id} p={p} />
+            ))}
+            {/* <!-- row 2 --> */}
+          </tbody>
         </table>
       </div>
       <div className="buyDetails border-2 m-5 w-72 bg-stone-100 h-min sticky top-0">
@@ -44,7 +44,7 @@ let deliveryCost = 600
         <hr />
         <div className="flex flex-col gap-2 p-2">
           <h2>
-            <strong>Items: </strong> {cartQuantity}
+            <strong>Items: </strong> {cartQty()}
           </h2>
           <h2>
             <strong>Subtotal: </strong>
@@ -54,12 +54,15 @@ let deliveryCost = 600
             <strong>Envío:</strong> {deliveryCost}
           </h2>
         </div>
-        <div className="bg-stone-200 border-t-2 border-slate-400">
-          <strong className="p-3 pt-4">
+        <div className="total bg-stone-200 border-t-2 border-slate-400">
+          <strong className=" p-3 pt-4">
             Total: {getTotal() + deliveryCost}
           </strong>
         </div>
-        <hr />
+        <div className="checkOutActions flex gap-2">
+          <button className="btn btn-xs mt-2">Vaciar Carrito</button>
+          <button className="btn btn-xs mt-2">Confirmar Compra</button>
+        </div>
       </div>
     </div>
   );

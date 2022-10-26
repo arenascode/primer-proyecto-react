@@ -10,7 +10,6 @@ const CartContext = createContext({
   cartQty: () => {},
   getTotal: () => { },
   subtotal: 0,
-  cartQuantity: 0
 });
 
 export const useCart = () => {
@@ -20,7 +19,6 @@ export const useCart = () => {
 const CartContextProvider = ({ children }) => {
   
   const [cartList, setCartList] = useState([]);
-  const [cartQuantity, setCartQuantity] = useState(0)
 
   const addToCart = (item, counter) => {
 
@@ -34,7 +32,7 @@ const CartContextProvider = ({ children }) => {
       console.log("Not found it. Has been created");
     } 
     console.log(isInCart(item));
-    setCartQuantity(cartQuantity);
+    cartQty()
     console.log(cartList);
     }
     
@@ -53,7 +51,7 @@ const CartContextProvider = ({ children }) => {
     const newArrayCart = cartList.filter((p) => p.id != id)
     console.log(newArrayCart)
     setCartList(newArrayCart)
-    setCartQuantity(newArrayCart.reduce((qty, p) => qty + p.quantity, 0));
+    newArrayCart.reduce((qty, p) => qty + p.quantity, 0);
   }
 
   let subtotal = 0;
@@ -64,7 +62,7 @@ const CartContextProvider = ({ children }) => {
 
   const cartQty = () => {
     const cartQuantity = cartList.reduce((qty, p) => qty + p.quantity, 0); 
-    setCartQuantity(cartQuantity)
+    return cartQuantity
   }
 
   const context = {
@@ -76,7 +74,6 @@ const CartContextProvider = ({ children }) => {
     getTotal: getTotal,
     subtotal: subtotal,
     cartQty: cartQty,
-    cartQuantity: cartQuantity
     // cartQuantity: cartList.length
   }
 

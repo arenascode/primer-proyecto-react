@@ -41,7 +41,6 @@ const ItemCount = ({ item }) => {
   const addHandler = () => {
 
     addToCart(item, counter)
-    cartQty(counter)
   
   }
   // const addToCart = () => {
