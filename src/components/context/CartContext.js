@@ -55,9 +55,7 @@ const CartContextProvider = ({ children }) => {
   let subtotal = 0;
   
   const getTotal = () => {
-   cartList.forEach((i) => (subtotal += i.quantity * i.Precio));
-    console.log(subtotal);
-    return subtotal;
+   return cartList.reduce((subtotal, i) => subtotal + i.quantity * i.Precio, 0);
  };
 
 
