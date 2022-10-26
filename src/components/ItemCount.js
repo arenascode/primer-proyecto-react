@@ -5,7 +5,7 @@ import {ItemDetail} from "./ItemDetail";
 const ItemCount = ({ item }) => {
 
   const [counter, setCounter] = useState(1)
-  const {addToCart, cartList, getTotal} = useCart()
+  const {addToCart, cartList, getTotal, cartQty} = useCart()
 
   const addToCartDisable = document.getElementById("btnAddToCart");
   
@@ -41,6 +41,7 @@ const ItemCount = ({ item }) => {
   const addHandler = () => {
 
     addToCart(item, counter)
+    cartQty(counter)
   
   }
   // const addToCart = () => {

@@ -4,7 +4,7 @@ import ItemCart from "./itemCart"
 
 const Cart = () => {
 
- const  {cartList, removeList, counter, getTotal, subtotal } = useCart()
+ const  {cartList, removeList, counter, getTotal, subtotal, cartQuantity } = useCart()
 
 let deliveryCost = 600
 
@@ -44,7 +44,7 @@ let deliveryCost = 600
         <hr />
         <div className="flex flex-col gap-2 p-2">
           <h2>
-            <strong>Items: </strong> {counter}
+            <strong>Items: </strong> {cartQuantity}
           </h2>
           <h2>
             <strong>Subtotal: </strong>
