@@ -33,7 +33,7 @@ const CartContextProvider = ({ children }) => {
     } 
     console.log(isInCart(item));
     cartQty()
-    console.log(cartList);
+    console.table(cartList);
     }
     
   
