@@ -1,3 +1,4 @@
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { products } from "./Products";
@@ -5,25 +6,25 @@ import { products } from "./Products";
 const ItemListContainer = () => {
 
 
-  const [items, setItems] = useState([]);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getProducts().then((response) => {
-      setItems(response);
-    });
+    getProducts();
   }, []);
 
   const getProducts = () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(products);
-      }, 200);
+    const db = getFirestore();
+    const productsCollection = collection(db, "products");
+    getDocs(productsCollection).then((res) => {
+      const productsFb = res.docs.map((d) => d.data());
+      console.log(productsFb);
+      setProducts(productsFb);
     });
   };
 
   return (
     <>
-      {items.map((i) => (
+      {products.map((i) => (
         <ProductCard key={i.id} {...i} />
       ))}
     </>

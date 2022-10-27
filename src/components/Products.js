@@ -41,7 +41,7 @@ const products = [
     Cantidad: "50g",
     img: "/imgProducts/Eleutero.jpeg",
     Description:
-      "Es una planta muy apreciada como remedio contra la extenuación. Se le atribuyen también propiedades como mejorar la memoria y aumentar la resistencia a enfermedades. También se afirma que aumenta la longevidad",
+      "Es una planta muy apreciada como remedio contra la extenuación. Se le atribuyen también propiedades como mejorar la memoria y aumentar la resistencia a enfermedades. También se afirma que aumenta la longevidad.",
     prop1: "Mejora la respuesta al estrés y a situaciones complicadas.",
     prop2: "Antifatiga.",
     prop3: "Mejora el rendimiento deportivo.",
@@ -92,7 +92,7 @@ const products = [
     Cantidad: "50g",
     img: "/imgProducts/Regaliz.jpeg",
     Description:
-      "A la planta del regaliz (Glycyrrhiza glabra L.) se le atribuyen virtudes y propiedades antiinflamatorias, antivirales, antiácidas, antiulcerosas, antiespasmódicas, digestivas, tónicas, expectorantes, carminativas, y también edulcorantes",
+      "A la planta del regaliz (Glycyrrhiza glabra L.) se le atribuyen virtudes y propiedades antiinflamatorias, antivirales, antiácidas, antiulcerosas, antiespasmódicas, digestivas, tónicas, expectorantes, carminativas, y también edulcorantes.",
     prop1: "Ayuda a aliviar los colicos.",
     prop2: "Contribuye a combatir infecciones.",
     prop3: "Mejora los sintomas del resfriado.",

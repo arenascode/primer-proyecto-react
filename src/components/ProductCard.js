@@ -4,7 +4,7 @@ import { products } from "./Products";
 import ItemDetail from "./ItemDetail"
 import { useCart } from "./context/CartContext";
 
-const ProductCard = ({ id, name, especie, precio, cantidad, img, Description, stock }) => {
+const ProductCard = ({ id, name, especie, precio, cantidad, img, description, stock }) => {
 
   return (
     <div className="flex-inline">
@@ -14,7 +14,7 @@ const ProductCard = ({ id, name, especie, precio, cantidad, img, Description, st
         </figure>
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
-          <p className="text-sm">{Description}</p>
+          <p className="text-sm text-justify">{description}</p>
           <div className="card-actions justify-end">
             <Link to={`/catalogo/product/${id}`}>
               <button className="btn btn-xs">Ver Más</button>
