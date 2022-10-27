@@ -43,7 +43,8 @@ const CartContextProvider = ({ children }) => {
   }
 
   const removeList = () => {
-  setCartList([])
+    setCartList([])
+    
   }
 
   const deleteItem = (id) => {

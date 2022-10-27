@@ -8,6 +8,9 @@ const Cart = () => {
 
 let deliveryCost = 600
 
+  const addHandler = () => {
+  removeList()
+  }
  
   return (
     <div className="flex gap-2 relative">
@@ -60,7 +63,7 @@ let deliveryCost = 600
           </strong>
         </div>
         <div className="checkOutActions flex gap-2">
-          <button className="btn btn-xs mt-2">Vaciar Carrito</button>
+          <button onClick={addHandler} className="btn btn-xs mt-2">Vaciar Carrito</button>
           <button className="btn btn-xs mt-2">Confirmar Compra</button>
         </div>
       </div>
