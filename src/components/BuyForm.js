@@ -82,9 +82,9 @@ const BuyForm = ({setBuyer, buyer, sendOrder}) => {
           />
 
       </div>
-      <button className="btn btn-xs btn-success" type="submit" value="enviar" onSubmit={sendOrder}>
+      {/* <button className="btn btn-xs btn-success" type="submit" value="enviar" onClick={sendOrder}>
         Confirmar
-      </button>
+      </button> */}
     </form>
   );
 }
