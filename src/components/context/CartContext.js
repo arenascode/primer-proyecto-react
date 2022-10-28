@@ -10,6 +10,7 @@ const CartContext = createContext({
   cartQty: () => {},
   getTotal: () => { },
   subtotal: 0,
+  setCartList: () => {}
 });
 
 export const useCart = () => {
@@ -77,6 +78,7 @@ const CartContextProvider = ({ children }) => {
     getTotal: getTotal,
     subtotal: subtotal,
     cartQty: cartQty,
+    setCartList: setCartList
     // cartQuantity: cartList.length
   }
 

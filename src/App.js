@@ -7,7 +7,7 @@ import ItemDetail from "./components/ItemDetail"
 import Error404 from "./components/Error404";
 import CartContextProvider from "./components/context/CartContext"
 import Cart from "./components/Cart";
-import Order from "./components/Order";
+import BuyForm from "./components/BuyForm";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <Route path="/catalogo" element={<Catalogo />} />
             <Route path={"/catalogo/product/:id"} element={<ItemDetail />} />
             <Route path={"/cart"} element={<Cart />} />
-            <Route path={"/cart/order"} element={<Order/>} />
+            <Route path={"/cart/order"} element={<BuyForm/>} />
             <Route path={"*"} element={<Error404 />} />
           </Routes>
         </BrowserRouter>

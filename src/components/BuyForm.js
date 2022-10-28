@@ -1,29 +1,23 @@
 import { useCart } from "./context/CartContext"
-import {addDoc, collection, getFirestore} from "firebase/firestore"
+import Cart from "./Cart"
 
 
-const Order = () => {
-
-  const {cartList, getTotal} = useCart()
-
-  const putOrder = () => {
-
+const BuyForm = ({setBuyer, buyer, sendOrder}) => {
+  
+  // useEffect(() => {
+    
+  // }, [])
   
 
-    const user = {name:'Miguel', phone: 2238163, email: 'miguel@gmail.com', }
+  const udpateBuyer = (event) => {
     
-    const order = {
-      buyer: user,
-      products: cartList,
-      subtotal: getTotal(),
-      delivery: 600
-    }
-    console.log(cartList);
-    console.log(order);
-    const db = getFirestore()
-    const ordersCollection = collection(db, 'orders')
-    addDoc(ordersCollection, order).then(({id}) => { console.log(id)})
-  }
+    setBuyer(buyer => ({ ...buyer, [event.target.ariaLabel]: event.target.value })
+    
+    )
+    console.log(buyer);
+    console.log(event.target.ariaLabel);
+
+    };
 
   return (
     <form className="containerFormCompra flex flex-col gap-3">
@@ -35,7 +29,7 @@ const Order = () => {
           type="text"
           className="input input-bordered input-sm w-full max-w-xs"
           aria-label="nombre"
-          required
+          required onChange={udpateBuyer}
         />
       </div>
       <div className="input-group flex-nowrap input-group-sm">
@@ -47,7 +41,7 @@ const Order = () => {
           className="input input-bordered input-sm w-full max-w-xs"
           aria-label="whatsapp"
           placeholder="ej: 11 1234 5678"
-          required
+          required onChange={udpateBuyer}
         />
       </div>
       <div className="input-group flex-nowrap input-group-sm">
@@ -58,9 +52,8 @@ const Order = () => {
           type="mail"
           className="input input-bordered input-sm w-full max-w-xs"
           aria-label="Mail"
-          aria-describedby="addon-wrapping"
           placeholder="ej: hola420@gmail.com"
-          required
+          required onChange={udpateBuyer}
         />
       </div>
       <div className="input-group flex-nowrap input-group-sm">
@@ -73,7 +66,7 @@ const Order = () => {
           aria-label="direccion"
           aria-describedby="addon-wrapping"
           placeholder="ej: Calle Malabia 2854 5D"
-          required
+          required onChange={udpateBuyer}
         />
       </div>
       <div className="form-check ml-2">
@@ -89,10 +82,10 @@ const Order = () => {
           />
 
       </div>
-      <button className="btn btn-xs btn-success" type="submit" value="enviar">
+      <button className="btn btn-xs btn-success" type="submit" value="enviar" onSubmit={sendOrder}>
         Confirmar
       </button>
     </form>
   );
 }
-export default Order
+export default BuyForm
