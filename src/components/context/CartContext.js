@@ -56,6 +56,8 @@ const CartContextProvider = ({ children }) => {
   }
 
   let subtotal = 0;
+
+  let deliveryCost = 600;
   
   const getTotal = () => {
    return cartList.reduce((subtotal, i) => subtotal + i.quantity * i.Precio, 0);

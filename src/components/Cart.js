@@ -1,6 +1,8 @@
 import { useContext } from "react"
+import { Link } from "react-router-dom"
 import { useCart } from "./context/CartContext"
 import ItemCart from "./itemCart"
+import Order from "./Order"
 
 const Cart = () => {
 
@@ -38,7 +40,8 @@ let deliveryCost = 600
           </tbody>
         </table>
       </div>
-      <div className="buyDetails border-2 m-5 w-72 bg-stone-100 h-min sticky top-0">
+      <div className="buyDetailsandForm border-2 m-5 w-70 bg-stone-100 h-min sticky top-0 flex gap-5 p-5">
+        <div className="buyDetails">
         <div className="buyDetailsTitle bg-stone-200 mt-0">
           <h1 className="text-center h-10 pt-2">
             <strong>Detalle de tu Compra</strong>
@@ -64,7 +67,13 @@ let deliveryCost = 600
         </div>
         <div className="checkOutActions flex gap-2">
           <button onClick={addHandler} className="btn btn-xs mt-2">Vaciar Carrito</button>
-          <button className="btn btn-xs mt-2">Confirmar Compra</button>
+          <Link to={'/cart/order'}>
+            <button className="btn btn-xs mt-2">Confirmar Compra</button>
+          </Link>
+        </div>  
+        </div>
+        <div className="border formCheckout ml-10 w-50 p-3">
+          <Order />
         </div>
       </div>
     </div>
