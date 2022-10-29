@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
-import ItemCount from "./ItemCount";
-import { products } from "./Products";
-import ItemDetail from "./ItemDetail"
-import { useCart } from "./context/CartContext";
 
-const ProductCard = ({ id, name, especie, precio, cantidad, img, description, stock }) => {
+const ProductCard = ({ id, name, img, description }) => {
 
   return (
     <div className="flex-inline">
@@ -18,9 +14,6 @@ const ProductCard = ({ id, name, especie, precio, cantidad, img, description, st
           <div className="card-actions justify-end">
             <Link to={`/catalogo/product/${id}`}>
               <button className="btn btn-xs">Ver Más</button>
-            </Link>
-            <Link className="ml-5">
-              <button  className="btn btn-xs">Agregar al Carrito</button>
             </Link>
           </div>
         </div>

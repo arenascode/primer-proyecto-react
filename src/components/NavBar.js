@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
+  
   return (
     <div className="navbar bg-warning-content text-neutral-content">
       <div className="flex-1 justify-start">

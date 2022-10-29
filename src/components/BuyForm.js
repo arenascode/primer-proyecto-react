@@ -1,8 +1,5 @@
-import { useCart } from "./context/CartContext"
-import Cart from "./Cart"
 
-
-const BuyForm = ({setBuyer, buyer, sendOrder}) => {
+const BuyForm = ({setBuyer}) => {
   
   // useEffect(() => {
     
@@ -12,11 +9,7 @@ const BuyForm = ({setBuyer, buyer, sendOrder}) => {
   const udpateBuyer = (event) => {
     
     setBuyer(buyer => ({ ...buyer, [event.target.ariaLabel]: event.target.value })
-    
     )
-    console.log(buyer);
-    console.log(event.target.ariaLabel);
-
     };
 
   return (
@@ -52,7 +45,7 @@ const BuyForm = ({setBuyer, buyer, sendOrder}) => {
           type="mail"
           className="input input-bordered input-sm w-full max-w-xs"
           aria-label="Mail"
-          placeholder="ej: hola420@gmail.com"
+          placeholder="ej: hola@gmail.com"
           required onChange={udpateBuyer}
         />
       </div>

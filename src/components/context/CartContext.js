@@ -1,5 +1,4 @@
-import { createContext, useContext, useState } from "react";
-import ItemCount from "../ItemCount";
+import { createContext, useContext } from "react";
 import Swal from "sweetalert2";
 import useLocalStorage from "../../hooks/useLocalStorage"
 
@@ -27,16 +26,28 @@ const CartContextProvider = ({ children }) => {
 
     if (isInCart(item)) {
       const itemFound = cartList.find(p => p.id == item.id)
-      console.log(itemFound);
       itemFound.quantity += counter
     } else {
       item.quantity = counter
       setCartList(cartList => cartList.concat(item))
-      console.log("Not found it. Has been created");
     } 
-    console.log(isInCart(item));
     cartQty()
-    console.table(cartList);
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+
+    Toast.fire({
+      icon: "success",
+      title: `Añadiste ${counter} unidades de ${item.name} `,
+    });
     }
     
   
@@ -51,17 +62,13 @@ const CartContextProvider = ({ children }) => {
   }
 
   const deleteItem = (id) => {
-    console.log(id);
     const newArrayCart = cartList.filter((p) => p.id != id)
-    console.log(newArrayCart)
     setCartList(newArrayCart)
     newArrayCart.reduce((qty, p) => qty + p.quantity, 0);
   }
 
   let subtotal = 0;
 
-  let deliveryCost = 600;
-  
   const getTotal = () => {
    return cartList.reduce((subtotal, i) => subtotal + i.quantity * i.Precio, 0);
  };

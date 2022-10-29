@@ -1,40 +1,32 @@
 import { useState } from "react";
 import { useCart } from "./context/CartContext";
-import {ItemDetail} from "./ItemDetail";
 
 const ItemCount = ({ item }) => {
 
   const [counter, setCounter] = useState(1)
-  const {addToCart, cartList, getTotal, cartQty} = useCart()
+  const {addToCart} = useCart()
 
   const addToCartDisable = document.getElementById("btnAddToCart");
   
 
-  if (counter <= 0) {
-    addToCartDisable.setAttribute("disabled", "disabled");
-  } else {
-    console.log("don't disabled nothing");
-  }
+  counter <= 0 && addToCartDisable.setAttribute("disabled", "disabled") 
+
 
 
   const clickHandlerAdd = () => {
-    console.log('Clicked add');
+
     if (counter < item.stock) {
       setCounter(counter + 1)
-      addToCartDisable.removeAttribute("disabled")
-      console.log(counter);
-
     } else {
       alert('Superaste el limite de stock disponible');
     }
   }
   const clickHandlerLess = () => {
-    console.log('Clicked Subtract');
+    
     if (counter >= 1) {
       setCounter(counter - 1)
     } else {
-      
-      console.log('No puedes restar cantidades negativas');
+      alert('No puedes restar cantidades negativas');
     }
   }
   
@@ -43,16 +35,6 @@ const ItemCount = ({ item }) => {
     addToCart(item, counter)
   
   }
-  // const addToCart = () => {
-  //   if (counter >= 1) {
-  //     console.log("añadite un item al carrito");
-  //     setAddCart(counter)
-  //     console.log(addCart);
-  //   } else {
-  //     console.log("don't do anything");
-  //   }
-  //   setCounter(0)
-  // }
 
   return (
     <div className=" itemCountContainer flex flex-center">
@@ -79,7 +61,5 @@ const ItemCount = ({ item }) => {
     </div>
   );
 }
-
-
 
 export default ItemCount

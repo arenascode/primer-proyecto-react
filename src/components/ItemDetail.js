@@ -1,18 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
-import { useCart } from "./context/CartContext";
 import ItemCount from "./ItemCount";
 import { products } from "./Products";
 
 const ProductDetail = ({ item }) => {
   
-  const { addToCart, cartList, counter, getTotal} =useCart()
- 
-  const addHandler = () => {
-    addToCart(item, counter);
-    console.log(item);
-    console.log(cartList);
-  };
   return (
     <div className="containerProductDetail flex-1">
       <div className="flex flex-row">

@@ -1,7 +1,6 @@
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import { products } from "./Products";
 
 const ItemListContainer = () => {
 
@@ -17,7 +16,6 @@ const ItemListContainer = () => {
     const productsCollection = collection(db, "products");
     getDocs(productsCollection).then((res) => {
       const productsFb = res.docs.map((d) => d.data());
-      console.log(productsFb);
       setProducts(productsFb);
     });
   };

@@ -11,14 +11,11 @@ const Cart = () => {
   
   let deliveryCost = 600
  
- const  {cartList, removeList, counter, getTotal, subtotal, cartQty, setCartList } = useCart()
+ const  {cartList, removeList, getTotal, cartQty, setCartList } = useCart()
 
   const [buyer, setBuyer] = useState({})
   
 
-  // Function to show products if the Cartlist has a product
-  
- 
   const CartEmpty = () => {
     
     return (
@@ -55,13 +52,11 @@ const Cart = () => {
     subtotal: getTotal(),
     delivery: 600,
   };
-  console.log(cartList);
-  console.log(order);
+    
   const db = getFirestore();
   const ordersCollection = collection(db, "orders");
   addDoc(ordersCollection, order).then(() => {
     setCartList([]);
-    console.log(cartList);
   });
     Swal.fire({
       text: "Muchas gracias por tu compra. Te estaremos contactando en breve!",
@@ -135,9 +130,6 @@ const Cart = () => {
                 <button onClick={deleteList} className="btn btn-xs mt-2">
                   Vaciar Carrito
                 </button>
-                {/* <Link to={'/cart/order'}>
-            <button className="btn btn-xs mt-2">Confirmar Compra</button>
-          </Link> */}
               </div>
             </div>
             <div className="buyForm W-50 p-2 ml-2">
