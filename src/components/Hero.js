@@ -6,12 +6,12 @@ const Hero = () => {
     width: "100%",
     height: "100%",
     backgroundImage: `url("./adaptogenosLogo.jpeg")`,
-    backgroundColor: "#462a169a",
+    backgroundColor: "#130c08c8",
   };
 
   return (
     <div
-      className="hero min-h-screen opacity-1"
+      className="hero min-h-screen"
       style={style}>
       <div className="hero-overlay"></div>
       <div className="hero-content text-center text-neutral-content">

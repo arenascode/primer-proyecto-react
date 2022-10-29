@@ -22,22 +22,28 @@ const Cart = () => {
   const CartEmpty = () => {
     
     return (
-      <div className="card w-96 bg-base-100 shadow-xl m-4">
-        <figure className="px-10 pt-10">
-          {/* <img
+      <>
+        <div className="card w-96 bg-base-100 shadow-xl mt-28 ml-96">
+          <figure className="px-10 pt-10">
+            {/* <img
             src=""
             className="rounded-xl"
           /> */}
-        </figure>
-        <div className="card-body items-center text-center">
-          <h2 className="card-title">Tu carrito está vacio!</h2>
-          <p>Te invitamos a conocer estas herramientas para potenciar tu salud en nuestro catálogo</p>
-          <div className="card-actions">
-            <Link to={'/catalogo'}><button className="btn btn-success btn-xs">Ir</button>
-            </Link>
+          </figure>
+          <div className="card-body items-center text-center">
+            <h2 className="card-title">Tu carrito está vacio!</h2>
+            <p>
+              Te invitamos a conocer estas herramientas para potenciar tu salud
+              en nuestro catálogo
+            </p>
+            <div className="card-actions">
+              <Link to={"/catalogo"}>
+                <button className="btn btn-success btn-xs">Ir</button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
    }
 // Send Order to FB
@@ -79,10 +85,7 @@ const Cart = () => {
         <CartEmpty />
       ) : (
         <div className="flex gap-2 relative cartContainer h-full">
-          <div className=" w-min CartList  m-5 ">
-            <h1 className="text-center">
-              <strong>Contenido de tu Carrito</strong>
-            </h1>
+          <div className=" w-min CartList  m-5 mt-10">
             <table className="table w-min">
               {/* <!-- head --> */}
               <thead>
