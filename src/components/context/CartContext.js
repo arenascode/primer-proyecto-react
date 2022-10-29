@@ -1,6 +1,8 @@
 import { createContext, useContext, useState } from "react";
 import ItemCount from "../ItemCount";
-import Swal from "sweetalert2"
+import Swal from "sweetalert2";
+import useLocalStorage from "../../hooks/useLocalStorage"
+
 const CartContext = createContext({
   cartList: [],
   addToCart: () => { },
@@ -19,7 +21,7 @@ export const useCart = () => {
 
 const CartContextProvider = ({ children }) => {
   
-  const [cartList, setCartList] = useState([]);
+  const [cartList, setCartList] = useLocalStorage('Products In Cart', []);
 
   const addToCart = (item, counter) => {
 
