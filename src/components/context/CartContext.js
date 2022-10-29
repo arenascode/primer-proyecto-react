@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import ItemCount from "../ItemCount";
-
+import Swal from "sweetalert2"
 const CartContext = createContext({
   cartList: [],
   addToCart: () => { },

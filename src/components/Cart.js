@@ -4,6 +4,8 @@ import { useCart } from "./context/CartContext"
 import ItemCart from "./itemCart"
 import BuyForm from "./BuyForm"
 import { addDoc, collection, getFirestore } from "firebase/firestore"
+import Swal from "sweetalert2"
+import 'animate.css'
 
 const Cart = () => {
   
@@ -55,6 +57,15 @@ const Cart = () => {
     setCartList([]);
     console.log(cartList);
   });
+    Swal.fire({
+      text: "Muchas gracias por tu compra. Te estaremos contactando en breve!",
+      showClass: {
+        popup: "animate__animated animate__fadeInDown",
+      },
+      hideClass: {
+        popup: "animate__animated animate__fadeOutUp",
+      },
+    });
 };
 
  //Delete List of items 
