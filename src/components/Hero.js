@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Hero = () => {
 
@@ -5,19 +6,22 @@ const Hero = () => {
     width: "100%",
     height: "100%",
     backgroundImage: `url("./adaptogenosLogo.jpeg")`,
+    backgroundColor: "#462a169a",
   };
 
   return (
     <div
-      className="hero min-h-screen"
+      className="hero min-h-screen opacity-1"
       style={style}>
-      <div className="hero-overlay bg-opacity-20"></div>
+      <div className="hero-overlay"></div>
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
           <h1 className="mb-5 text-5xl font-bold description">Welcome to your Adaptogen Store</h1>
-          <p className="mb-5">
+          <hr />
+          <p className="mb-5 mt-5 text-xl">
             Potencia tu mente y cuerpo con ayuda de la naturaleza.
           </p>
+          <Link to={'/catalogo'} className="btn btn-sm btn-warning text-lg"> Ver Productos</Link>
         </div>
       </div>
     </div>
