@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import Swal from "sweetalert2";
 import useLocalStorage from "../../hooks/useLocalStorage"
 
@@ -11,7 +11,8 @@ const CartContext = createContext({
   cartQty: () => {},
   getTotal: () => { },
   subtotal: 0,
-  setCartList: () => {}
+  setCartList: () => { },
+  cartQuantity: 0
 });
 
 export const useCart = () => {
@@ -21,6 +22,7 @@ export const useCart = () => {
 const CartContextProvider = ({ children }) => {
   
   const [cartList, setCartList] = useLocalStorage('Products In Cart', []);
+  const [cartQuantity, setCartQuantity] = useState(0)
 
   const addToCart = (item, counter) => {
 
@@ -75,7 +77,8 @@ const CartContextProvider = ({ children }) => {
 
   const cartQty = () => {
     const cartQuantity = cartList.reduce((qty, p) => qty + p.quantity, 0); 
-    return cartQuantity
+    setCartQuantity(cartQuantity)
+    return  cartQuantity;
   }
 
   const context = {
@@ -87,7 +90,8 @@ const CartContextProvider = ({ children }) => {
     getTotal: getTotal,
     subtotal: subtotal,
     cartQty: cartQty,
-    setCartList: setCartList
+    setCartList: setCartList,
+    cartQuantity: cartQuantity
     // cartQuantity: cartList.length
   }
 

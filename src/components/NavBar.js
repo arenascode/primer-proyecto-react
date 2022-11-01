@@ -1,8 +1,16 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "./context/CartContext";
 
 const NavBar = () => {
   
-  return (
+  console.log('Esto si funciona o tampoco?');
+
+  
+  const { cartList } = useCart()
+  console.log(`log del navBar: ${cartList}`);
+
+return (
     <div className="navbar bg-warning-content text-neutral-content">
       <div className="flex-1 justify-start">
         <Link to={"/"} className="btn btn-ghost normal-case text-xl text-white">
@@ -13,38 +21,16 @@ const NavBar = () => {
         <ul className="menu menu-horizontal p-0">
           <li>
             <Link to={"/"}>
-              <a>Home</a>
+              <div>Home</div>
             </Link>
           </li>
           <li>
             <Link to={"/catalogo"}>
-              <a>Catálogo</a>
+              <span>Catálogo</span>
             </Link>
           </li>
-          <li tabIndex={0}>
-            <a>
-              Sobre el Uso de Adaptogenos
-              <svg
-                className="fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-              </svg>
-            </a>
-            <ul className="p-2">
-              <li>
-                <a>Submenu 1</a>
-              </li>
-              <li>
-                <a>Submenu 2</a>
-              </li>
-            </ul>
-          </li>
           <li>
-            <a>Contacto</a>
+            <span>Contacto</span>
           </li>
         </ul>
       </div>
@@ -66,7 +52,7 @@ const NavBar = () => {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                 />
               </svg>
-              <span className="badge badge-sm indicator-item"></span>
+            <span className="badge badge-sm indicator-item">{ cartList.length}</span>
             </div>
           </label>
           <div
@@ -75,7 +61,7 @@ const NavBar = () => {
           >
             <div className="card-body">
               <span className="font-bold text-lg">0 Items</span>
-              <span className="text-info">Subtotal: $0</span>
+              <span className="text-info">Hola!: $0</span>
               <div className="card-actions">
                 <button className="btn btn-primary btn-block">View cart</button>
               </div>

@@ -19,7 +19,7 @@ const Hero = () => {
           <h1 className="mb-5 text-5xl font-bold description">Welcome to your Adaptogen Store</h1>
           <hr />
           <p className="mb-5 mt-5 text-xl">
-            Potencia tu mente y cuerpo con ayuda de la naturaleza.
+            Potencia tu mente y cuerpo con ayuda de la naturaleza. Hola, funciona este cambio?
           </p>
           <Link to={'/catalogo'} className="btn btn-sm btn-warning text-lg"> Ver Productos</Link>
         </div>

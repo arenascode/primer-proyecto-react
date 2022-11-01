@@ -76,7 +76,7 @@ const Cart = () => {
  
   return (
     <>
-      {cartList.length == 0 ? (
+      {cartList.length === 0 ? (
         <CartEmpty />
       ) : (
         <div className="flex gap-2 relative cartContainer h-full">
@@ -115,7 +115,7 @@ const Cart = () => {
                 </h2>
                 <h2>
                   <strong>Subtotal: </strong>
-                  {getTotal()}{" "}
+                  {getTotal()}
                 </h2>
                 <h2>
                   <strong>Envío:</strong> {deliveryCost}
