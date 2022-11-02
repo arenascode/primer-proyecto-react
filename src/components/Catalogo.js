@@ -4,10 +4,10 @@ const Catalogo = () => {
 
   return (
     <>
-      <div className="text-xl bg-stone-300 catalogue">
+      <div className="text-xl">
         <h1 className="text-center catalogueTitle">Catálogo</h1>
-        <div className=" catalogueItems">
-          <ItemListContainer className=" catalogueItems" />
+        <div className=" catalogueItems catalogue">
+          <ItemListContainer />
         </div>
       </div>
     </>

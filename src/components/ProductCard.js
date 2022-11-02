@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ id, name, img, description }) => {
 
   return (
-    <div className="flex-inline">
+    <div className="flex-inline ml-10">
       <div className="card w-80 glass">
         <figure>
           <img src={img} alt="car!" />

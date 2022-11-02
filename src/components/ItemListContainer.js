@@ -6,25 +6,37 @@ const ItemListContainer = () => {
 
 
   const [products, setProducts] = useState([]);
+  const [loadingProducts, setLoadingProducts] = useState(true)
+ 
+     useEffect(() => {
+      getProducts()
+     }, []);
+  
 
-  useEffect(() => {
-    getProducts();
-  }, []);
+  const LoadingProducts = () => {
+  
+    return (
 
+      <h1 className="text-xl text-white">Loading Products...</h1>
+    )
+  }
+
+  
   const getProducts = () => {
     const db = getFirestore();
     const productsCollection = collection(db, "products");
     getDocs(productsCollection).then((res) => {
       const productsFb = res.docs.map((d) => d.data());
       setProducts(productsFb);
+      setLoadingProducts(false)
     });
   };
 
   return (
     <>
-      {products.map((i) => (
+      {loadingProducts ? <LoadingProducts/> : products.map((i) => (
         <ProductCard key={i.id} {...i} />
-      ))}
+      )) }
     </>
   );
 };

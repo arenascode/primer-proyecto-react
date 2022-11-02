@@ -6,12 +6,12 @@
 .catalogueTitle {
   font-size: 2rem;
   padding: 10px;
-  
+  background-color: #462a169a;
 }
 .catalogueItems {
   display: inline-flex;
   flex-wrap: wrap;
-  margin-left: 100px;
-  column-gap: 1.5em;
+  width: 100%;
+  column-gap: 1em;
   row-gap: 0.8em;
 }
