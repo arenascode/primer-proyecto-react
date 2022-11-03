@@ -69,7 +69,7 @@ const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
           required onChange={udpateBuyer}
         />
       </div>
-      <div className="form-check ml-2">
+      {/* <div className="form-check ml-2">
                     <label classNameName="form-check-label mr-2" for="flexCheckDefault">
             Acepto Terminos y Condiciones
         </label>
@@ -81,7 +81,7 @@ const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
             required
           />
 
-      </div>
+      </div> */}
       {/* <button className="btn btn-xs btn-success" type="submit" value="enviar" onClick={sendOrder}>
         Confirmar
       </button> */}
