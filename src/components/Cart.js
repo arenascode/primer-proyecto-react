@@ -14,6 +14,7 @@ const Cart = () => {
  const  {cartList, removeList, getTotal, cartQty, setCartList } = useCart()
 
   const [buyer, setBuyer] = useState({})
+  const [disabledBtn, setDisabledBtn] = useState(true)
   
 
   const CartEmpty = () => {
@@ -67,13 +68,25 @@ const Cart = () => {
         popup: "animate__animated animate__fadeOutUp",
       },
     });
+    console.log('Order Send');
+    setDisabledBtn(true)
 };
 
  //Delete List of items 
   const deleteList = () => {
   removeList()
   }
- 
+   
+  // Enable Checkout Button
+  
+  if (disabledBtn) {
+    console.log('Dont disabled button');
+  } else {
+      const checkoutBtn = document.getElementById("checkoutBtn");
+      checkoutBtn.removeAttribute("disabled", "disabled");
+      console.log('disabled button');
+  }
+    
   return (
     <>
       {cartList.length === 0 ? (
@@ -134,14 +147,20 @@ const Cart = () => {
             </div>
             <div className="buyForm W-50 p-2 ml-2">
               <div className="border formCheckout">
-                <BuyForm setBuyer={setBuyer} />
+                <BuyForm
+                  setBuyer={setBuyer}
+                  setDisabledBtn={setDisabledBtn}
+                  buyer={buyer}
+                />
               </div>
               <div className="sendOrderButton mt-5">
                 <button
+                  id="checkoutBtn"
                   className="btn btn-xs btn-success"
                   type="submit"
                   value="enviar"
                   onClick={sendOrder}
+                  disabled={disabledBtn}
                 >
                   Confirmar
                 </button>

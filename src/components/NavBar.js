@@ -3,7 +3,6 @@ import { useCart } from "./context/CartContext";
 
 const NavBar = () => {
   const { cartQty, cartList, getTotal } = useCart();
-  console.log(cartQty());
 
   return (
     <div className="navbar bg-warning-content text-neutral-content">

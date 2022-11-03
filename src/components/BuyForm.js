@@ -1,5 +1,7 @@
 
-const BuyForm = ({setBuyer}) => {
+
+
+const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
   
   // useEffect(() => {
     
@@ -10,8 +12,13 @@ const BuyForm = ({setBuyer}) => {
     
     setBuyer(buyer => ({ ...buyer, [event.target.ariaLabel]: event.target.value })
     )
-    };
-
+    console.log(event.target.value);
+    let sizeFieldsBuyer = Object.keys(buyer).length;
+    console.log(sizeFieldsBuyer);
+    
+    sizeFieldsBuyer >= 4 && setDisabledBtn(false)
+    }
+  
   return (
     <form className="containerFormCompra flex flex-col gap-3">
       <div className="input-group flex-nowrap input-group-sm">

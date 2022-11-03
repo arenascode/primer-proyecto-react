@@ -94,6 +94,10 @@ const CartContextProvider = ({ children }) => {
     cartQuantity: cartQuantity
     // cartQuantity: cartList.length
   }
+  
+  // to enable Checkout Button
+  
+  
 
   return (
     <CartContext.Provider value={ context }>
