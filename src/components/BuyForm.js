@@ -1,6 +1,5 @@
 
 
-
 const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
   
   // useEffect(() => {
@@ -12,12 +11,18 @@ const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
     
     setBuyer(buyer => ({ ...buyer, [event.target.ariaLabel]: event.target.value })
     )
-    console.log(event.target.value);
-    let sizeFieldsBuyer = Object.keys(buyer).length;
-    console.log(sizeFieldsBuyer);
-    
-    sizeFieldsBuyer >= 4 && setDisabledBtn(false)
-    }
+    console.log(typeof event.target.value);
+
+    const buyerNameInput = document.getElementById('buyerName')
+    const buyerPhoneInput = document.getElementById('buyerPhone')
+    const buyerMailInput = document.getElementById("buyerMail");
+    console.log(buyerNameInput.value);
+    console.log(buyerPhoneInput.value);
+    console.log(buyerMailInput.value);
+
+(buyerNameInput.value == "" || buyerPhoneInput.value == "" || buyerMailInput.value == "") ? setDisabledBtn(true) : setDisabledBtn(false);
+
+  }
   
   return (
     <form className="containerFormCompra flex flex-col gap-3">
@@ -26,6 +31,7 @@ const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
           Nombre:
         </span>
         <input
+          id="buyerName"
           type="text"
           className="input input-bordered input-sm w-full max-w-xs"
           aria-label="nombre"
@@ -37,6 +43,7 @@ const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
           Whatsapp:
         </span>
         <input
+          id="buyerPhone"
           type="number"
           className="input input-bordered input-sm w-full max-w-xs"
           aria-label="whatsapp"
@@ -49,6 +56,7 @@ const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
           Mail
         </span>
         <input
+          id="buyerMail"
           type="mail"
           className="input input-bordered input-sm w-full max-w-xs"
           aria-label="Mail"
@@ -56,7 +64,7 @@ const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
           required onChange={udpateBuyer}
         />
       </div>
-      <div className="input-group flex-nowrap input-group-sm">
+      {/* <div className="input-group flex-nowrap input-group-sm">
         <span className="input-group-text" id="addon-wrapping">
           Dirección
         </span>
@@ -68,19 +76,6 @@ const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
           placeholder="ej: Calle Malabia 2854 5D"
           required onChange={udpateBuyer}
         />
-      </div>
-      {/* <div className="form-check ml-2">
-                    <label classNameName="form-check-label mr-2" for="flexCheckDefault">
-            Acepto Terminos y Condiciones
-        </label>
-        <input
-            className="checkbox checkbox-xs ml-2"
-            type="checkbox"
-            value="accept"
-            id="flexCheckDefault"
-            required
-          />
-
       </div> */}
       {/* <button className="btn btn-xs btn-success" type="submit" value="enviar" onClick={sendOrder}>
         Confirmar

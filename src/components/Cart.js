@@ -1,4 +1,4 @@
-import {  useState } from "react"
+import {  useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { useCart } from "./context/CartContext"
 import ItemCart from "./itemCart"
@@ -16,6 +16,9 @@ const Cart = () => {
   const [buyer, setBuyer] = useState({})
   const [disabledBtn, setDisabledBtn] = useState(true)
   
+  useEffect(() => { 
+  toEnableButton()
+  }, [])
 
   const CartEmpty = () => {
     
@@ -43,7 +46,8 @@ const Cart = () => {
         </div>
       </>
     );
-   }
+  }
+  
 // Send Order to FB
   const sendOrder = () => {
   
@@ -76,17 +80,20 @@ const Cart = () => {
   const deleteList = () => {
   removeList()
   }
-   
+
   // Enable Checkout Button
+  const toEnableButton = () => {
+    const checkoutBtn = document.getElementById("checkoutBtn");
   
-  if (disabledBtn) {
-    console.log('Dont disabled button');
-  } else {
-      const checkoutBtn = document.getElementById("checkoutBtn");
+    if (disabledBtn) {
+      console.log('Dont disabled button');
+      checkoutBtn.setAttribute('disabled', '');
+    } else {
       checkoutBtn.removeAttribute("disabled", "disabled");
       console.log('disabled button');
+    }
   }
-    
+
   return (
     <>
       {cartList.length === 0 ? (
