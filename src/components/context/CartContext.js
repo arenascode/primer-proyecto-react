@@ -25,31 +25,39 @@ const CartContextProvider = ({ children }) => {
   const [cartQuantity, setCartQuantity] = useState(0)
 
   const addToCart = (item, counter) => {
+    
+    if (counter == 0) {
+      Swal.fire({
+        text: "Selecciona una cantidad"
+      });
 
-    if (isInCart(item)) {
-      const itemFound = cartList.find(p => p.id == item.id)
-      itemFound.quantity += counter
     } else {
-      item.quantity = counter
-      setCartList(cartList => cartList.concat(item))
-    } 
-    cartQty()
-    const Toast = Swal.mixin({
-      toast: true,
-      position: "top-end",
-      showConfirmButton: false,
-      timer: 2000,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.addEventListener("mouseenter", Swal.stopTimer);
-        toast.addEventListener("mouseleave", Swal.resumeTimer);
-      },
-    });
+      if (isInCart(item)) {
+        const itemFound = cartList.find(p => p.id == item.id)
+        itemFound.quantity += counter
+      } else {
+        item.quantity = counter
+        setCartList(cartList => cartList.concat(item))
+      }
+    
+      cartQty()
+      const Toast = Swal.mixin({
+        toast: true,
+        position: "top-end",
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener("mouseenter", Swal.stopTimer);
+          toast.addEventListener("mouseleave", Swal.resumeTimer);
+        },
+      });
 
-    Toast.fire({
-      icon: "success",
-      title: `Añadiste ${counter} unidades de ${item.name} `,
-    });
+      Toast.fire({
+        icon: "success",
+        title: `Añadiste ${counter} unidades de ${item.name} `,
+      });
+    }
     }
     
   
