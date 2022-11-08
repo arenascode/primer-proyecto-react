@@ -25,13 +25,15 @@ const CartContextProvider = ({ children }) => {
   const [cartQuantity, setCartQuantity] = useState(0)
 
   const addToCart = (item, counter) => {
-    
+
+    // if the user don't choose a quantity
     if (counter == 0) {
       Swal.fire({
         text: "Selecciona una cantidad"
       });
-
+    
     } else {
+      // if the product is in the cart
       if (isInCart(item)) {
         const itemFound = cartList.find(p => p.id == item.id)
         itemFound.quantity += counter
@@ -39,7 +41,8 @@ const CartContextProvider = ({ children }) => {
         item.quantity = counter
         setCartList(cartList => cartList.concat(item))
       }
-    
+      item.stock -= counter
+      console.log(item);
       cartQty()
       const Toast = Swal.mixin({
         toast: true,

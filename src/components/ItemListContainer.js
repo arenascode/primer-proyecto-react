@@ -21,12 +21,14 @@ const ItemListContainer = () => {
     )
   }
 
-  
+  // Si quiero hacer un return implicito de un objeto debo envolverlo en parentesis para que no marque error.
+
   const getProducts = () => {
     const db = getFirestore();
     const productsCollection = collection(db, "products");
     getDocs(productsCollection).then((res) => {
-      const productsFb = res.docs.map((d) => d.data());
+      const productsFb = res.docs.map((d) => ({ id: d.id, ...d.data() }));
+      console.log(productsFb);
       setProducts(productsFb);
       setLoadingProducts(false)
     });

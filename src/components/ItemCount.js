@@ -7,17 +7,6 @@ const ItemCount = ({ item }) => {
   const [counter, setCounter] = useState(1)
   const {addToCart} = useCart()
 
-  useEffect(() => {
-    disableaddCartBtn()
-  }, [])
-  
-
-  const addToCartDisable = document.getElementById("btnAddToCart");
-  
-  const disableaddCartBtn = () => {
-    counter <= 0 && addToCartDisable.setAttribute("disabled", "disabled")
-  }
-
 
   const clickHandlerAdd = () => {
 
