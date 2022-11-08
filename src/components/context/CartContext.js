@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 import Swal from "sweetalert2";
 import useLocalStorage from "../../hooks/useLocalStorage"
-
+import { doc, getFirestore, updateDoc } from "firebase/firestore";
 const CartContext = createContext({
   cartList: [],
   addToCart: () => { },
@@ -41,7 +41,11 @@ const CartContextProvider = ({ children }) => {
         item.quantity = counter
         setCartList(cartList => cartList.concat(item))
       }
-      item.stock -= counter
+      // To update Stock In FireStore
+      const db = getFirestore();
+      const orderDoc = doc(db, "products", item.id);
+      let newStock = (item.stock -= counter);
+      updateDoc(orderDoc, { stock: newStock });
       console.log(item);
       cartQty()
       const Toast = Swal.mixin({
