@@ -83,7 +83,7 @@ const CartContextProvider = ({ children }) => {
   let subtotal = 0;
 
   const getTotal = () => {
-   return cartList.reduce((subtotal, i) => subtotal + i.quantity * i.Precio, 0);
+   return cartList.reduce((subtotal, i) => subtotal + i.quantity * i.precio, 0);
  };
 
   const cartQty = () => {

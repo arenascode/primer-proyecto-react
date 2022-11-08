@@ -1,7 +1,8 @@
+import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
 import ItemCount from "./ItemCount";
-import { products } from "./Products";
+// import { products } from "./Products";
 
 const ProductDetail = ({ item }) => {
   
@@ -76,12 +77,12 @@ const ProductDetail = ({ item }) => {
                 </li>
               </ol>
             </nav>
-            <h2 className="price text-lg mt-3 ml-3 ">Precio: ${item.Precio}</h2>
+            <h2 className="price text-lg mt-3 ml-3 ">Precio: ${item.precio}</h2>
             <h2 className="price text-lg mt-3 ml-3 ">
               Especie: {item.especie}
             </h2>
             <h2 className="price text-lg mt-3 ml-3 ">
-              Cantidad: Pack por {item.Cantidad}
+              Cantidad: Pack por {item.cantidad}
             </h2>
             <div className=" relative cardActions flex-column flex-center m-5">
               <ItemCount item={item} />
@@ -106,7 +107,7 @@ const ProductDetail = ({ item }) => {
           </h1>
           <div className="space-y-6">
             <p className="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
-              {item.Description}
+              {item.description}
             </p>
           </div>
         </div>
@@ -167,19 +168,21 @@ const ItemDetail = () => {
   // console.log(useParams(itemId));
 
   useEffect(() => {
-    getItemDetail().then(response => {
-      setItem(response)
-    })
+    getItemDetail()
   }, [])
 
   const getItemDetail = () => {
-    return new Promise((resolve) => {
-      setTimeout(() =>
-      resolve(products.find(p => p.id == itemId)), 500)
-      
-    })
-  }
-  
+    
+    const db = getFirestore()
+    const productsCollection = collection(db, "products")
+    getDocs(productsCollection).then((snapshot) => {
+      const productsFb = snapshot.docs.map((i) => ({id: i.id, ...i.data()}))
+      console.log(productsFb);
+      let productFb = productsFb.find(p => p.id == itemId)
+      console.log(productFb);
+      setItem(productFb)
+      })
+    }
 
   return (
     <div>

@@ -24,8 +24,8 @@ const ProductCart = ({ p }) => {
           </div>
         </td>
         <td>{p.quantity}</td>
-        <td>${p.Precio}</td>
-        <td className="font-bold">{p.quantity * p.Precio}</td>
+        <td>${p.precio}</td>
+        <td className="font-bold">{p.quantity * p.precio}</td>
         <td className="font-bold ml-2 min-w">
           <button
             id={p.id}
