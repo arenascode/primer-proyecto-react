@@ -42,11 +42,11 @@ const CartContextProvider = ({ children }) => {
         setCartList(cartList => cartList.concat(item))
       }
       // To update Stock In FireStore
-      const db = getFirestore();
-      const orderDoc = doc(db, "products", item.id);
-      let newStock = (item.stock -= counter);
-      updateDoc(orderDoc, { stock: newStock });
-      console.log(item);
+      // const db = getFirestore();
+      // const orderDoc = doc(db, "products", item.id);
+      // let newStock = (item.stock -= counter);
+      // updateDoc(orderDoc, { stock: newStock });
+      // console.log(item);
       cartQty()
       const Toast = Swal.mixin({
         toast: true,
@@ -79,9 +79,15 @@ const CartContextProvider = ({ children }) => {
   }
 
   const deleteItem = (id) => {
-    const newArrayCart = cartList.filter((p) => p.id != id)
-    setCartList(newArrayCart)
+    const newArrayCart = cartList.filter((p) => p.id != id);
+    setCartList(newArrayCart);
     newArrayCart.reduce((qty, p) => qty + p.quantity, 0);
+    // To update Stock In FireStore
+    // const db = getFirestore();
+    // const orderDoc = doc(db, "products", item.id);
+    // let newStock = (item.stock -= counter);
+    // updateDoc(orderDoc, { stock: newStock });
+    // console.log(item);
   }
 
   let subtotal = 0;

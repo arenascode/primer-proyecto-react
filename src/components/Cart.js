@@ -16,9 +16,9 @@ const Cart = () => {
   const [buyer, setBuyer] = useState({})
   const [disabledBtn, setDisabledBtn] = useState(true)
   
-  useEffect(() => { 
-  toEnableButton()
-  }, [])
+  // useEffect(() => { 
+  // toEnableButton()
+  // }, [])
 
   const CartEmpty = () => {
     

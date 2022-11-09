@@ -5,6 +5,7 @@ const ProductCart = ({ p }) => {
   
   const deleteProductCart = (p) => {
     deleteItem(p.target.id);
+    console.log(p);
   };
 
   return (
