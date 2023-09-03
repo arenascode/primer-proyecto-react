@@ -39,21 +39,21 @@ const ItemCount = ({ item }) => {
     <div className=" itemCountContainer flex flex-center">
       <div className="flex itemCount justify-center border border-amber-800">
         <button
-          className="btn btn-xs m-1 rounded-full"
+          className="btn btn-xs btn-success m-1 rounded-full"
           onClick={clickHandlerLess}
         >
           -
         </button>
         <div className="m-1">{counter}</div>
         <button
-          className="btn btn-xs m-1 rounded-full"
+          className="btn btn-xs btn-success m-1 rounded-full"
           onClick={clickHandlerAdd}
         >
           +
         </button>
       </div>
       <div className="addToCart">
-        <button id='btnAddToCart' onClick={addHandler} className="btn btn-xs justify-center">
+        <button id='btnAddToCart' onClick={addHandler} className="btn btn-xs btn-success justify-center">
           Agregar al Carrito
         </button>
       </div>

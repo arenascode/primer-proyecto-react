@@ -16,8 +16,9 @@ const ItemListContainer = () => {
   const LoadingProducts = () => {
   
     return (
-
-      <h1 className="text-xl text-white">Loading Products...</h1>
+      <div className="h-screen flex m-auto">
+        <h1 className="text-2xl text-white m-auto">Loading Products...</h1>
+      </div>
     )
   }
 
@@ -34,11 +35,17 @@ const ItemListContainer = () => {
     });
   };
 
+  const listOfProducts =
+    products.map((i) => (
+        <ProductCard key={i.id} {...i} />
+      ))
   return (
     <>
-      {loadingProducts ? <LoadingProducts/> : products.map((i) => (
-        <ProductCard key={i.id} {...i} />
-      )) }
+      {loadingProducts ? <LoadingProducts /> :
+        <div className="flex flex-wrap gap-12 place-content-center p-2">
+          {listOfProducts}
+        </div>
+      }
     </>
   );
 };

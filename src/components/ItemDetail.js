@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, getDocs, getFirestore } from "firebase/firestore";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
 import ItemCount from "./ItemCount";
@@ -7,19 +7,19 @@ import ItemCount from "./ItemCount";
 const ProductDetail = ({ item }) => {
   
   return (
-    <div className="containerProductDetail flex-1">
-      <div className="flex flex-row">
-        <div className=" photoandBuyDetails m-10 flex bg-#78716c">
+    <div className="containerProductDetail bg-grey-900 glass flex-1">
+      <div className="flex productDetail">
+        <div className=" photoandBuyDetails mt-8 flex flex-col place-content-center bg-#78716c lg:flex-row">
           {/* Container buy, stock, addCart info */}
-          <div className=" productPhoto overflow-hidden rounded-lg lg:block h-80 w-82 flex">
+          <div className=" productPhoto overflow-hidden rounded-t-lg lg:block w-10/12 flex ml-12">
             <img
               src={item.img}
               alt=""
               className="h-full w-full object-cover object-center"
             />
           </div>
-          <div className="buyDetails artboard artboard-horizontal phone-1 ml-10 bg-base-300 rounded-md">
-            <h1 className="font-bold tracking-normal text-gray-900 sm:text-3xl mt-3 text-justify ml-3 ">
+          <div className="buyDetails artboard artboard-vertical ml-12 bg-#78716c glass w-10/12 text-white">
+            <h1 className="font-bold tracking-normal text-2xl mt-3 text-justify ml-3 ">
               {item.name}
             </h1>
             <nav aria-label="Breadcrumb">
@@ -28,7 +28,7 @@ const ProductDetail = ({ item }) => {
                   <div className="flex items-center">
                     <Link
                       to={"/catalogo"}
-                      className="mr-2 text-sm font-medium text-gray-900"
+                      className="mr-2 text-sm font-medium text-white"
                     >
                       Catálogo
                     </Link>
@@ -39,7 +39,7 @@ const ProductDetail = ({ item }) => {
                       fill="currentColor"
                       xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true"
-                      className="h-5 w-4 text-gray-300"
+                      className="h-5 w-4"
                     >
                       <path d="M5.697 4.34L8.98 16.532h1.327L7.025 4.341H5.697z" />
                     </svg>
@@ -48,7 +48,7 @@ const ProductDetail = ({ item }) => {
 
                 <li>
                   <div className="flex items-center">
-                    <Link className="mr-2 text-sm font-medium text-gray-900">
+                    <Link className="mr-2 text-sm font-medium text-white-900">
                       Adaptogenos
                     </Link>
                     <svg
@@ -70,7 +70,7 @@ const ProductDetail = ({ item }) => {
                     to={"/catalogo/product/:id"}
                     href="#"
                     aria-current="page"
-                    className="font-medium text-gray-500 hover:text-gray-600"
+                    className="font-medium text-white-500 hover:text-gray-600"
                   >
                     {item.name}
                   </Link>
@@ -90,7 +90,7 @@ const ProductDetail = ({ item }) => {
               <div className="cardButtons flex flex-grow mb-3">
                 {/* Add to cart */}
                 <Link to={"/cart"}>
-                  <button className="btn btn-xs justify-end mt-3">
+                  <button className="btn btn-xs btn-success justify-end mt-3">
                     Ir al Carrito
                   </button>
                 </Link>
@@ -100,27 +100,27 @@ const ProductDetail = ({ item }) => {
         </div>
       </div>
       {/* Product Info  */}
-      <div className="productDescription m-10 flex">
+      <div className="productDescription ml-12 w-10/12 flex flex-col bg-#78716c glass text-white rounded-b-lg lg:flex-row">
         <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 content-center">
-          <h1 className=" font-bold tracking-normal text-gray-900 sm:text-3xl m-auto text-justify">
+          <h1 className=" font-bold tracking-normal text-white-900  text-2xl mt-4 ml-8 text-start">
             ¿Qué es?
           </h1>
           <div className="space-y-6">
-            <p className="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
+            <p className="text-lg text-justify text-white w-80 ml-10 mt-4 tracking-wide">
               {item.description}
             </p>
           </div>
         </div>
 
         <div className="properties ml-8 lg:border-r lg:border-gray-200">
-          <h1 className="font-bold tracking-normal text-gray-900 sm:text-3xl m-auto text-justify">
+          <h1 className="font-bold tracking-normal text-2xl mt-8 text-start">
             Propiedades
           </h1>
 
-          <div className="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
+          <div className="font-medium text-justify  w-80 mt-9 tracking-wide">
             <ul className="list-disc space-y-3 pl-4 text-m">
-              <li className="text-gray-900">
-                <span className="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
+              <li className="">
+                <span className="font-medium text-justify  w-80 mt-9 tracking-wide">
                   {item.prop1}
                 </span>
               </li>
@@ -143,13 +143,13 @@ const ProductDetail = ({ item }) => {
           </div>
         </div>
 
-        <div className="recomendedUse ml-8 w-80 text-justify">
-          <h2 className="font-bold tracking-normal text-gray-900 sm:text-3xl m-auto text-justify">
+        <div className="recomendedUse ml-8 w-80 text-justify mb-8">
+          <h1 className="font-bold tracking-normal text-2xl m-auto mt-8 text-start">
             ¿Cómo se usa?
-          </h2>
+          </h1>
 
           <div className="mt-4 space-y-6">
-            <p className="font-medium text-justify text-gray-900 w-80 mt-9 tracking-wide">
+            <p className="font-medium text-justify w-80 mt-9 tracking-wide">
               {item.uso}
             </p>
           </div>
@@ -164,7 +164,7 @@ const ItemDetail = () => {
   const { id: itemId } = useParams()
 
   const [item, setItem] = useState([])
-
+  const [loadingProduct, setLoadingProduct] = useState(true)
   // console.log(useParams(itemId));
 
   useEffect(() => {
@@ -181,14 +181,22 @@ const ItemDetail = () => {
       let productFb = productsFb.find(p => p.id == itemId)
       console.log(productFb);
       setItem(productFb)
+      setLoadingProduct(false)
       })
     }
 
-  return (
-    <div>
-      <div>
-        <ProductDetail item={item} />
+    const LoadingProduct = () => {
+  
+    return (
+      <div className="h-screen flex m-auto bg-#78716c glass">
+        <h1 className="text-2xl text-white m-auto">Loading Product...</h1>
       </div>
+    );
+    }
+  
+  return (
+    <div className="bg-#78716c">
+      {loadingProduct ? <LoadingProduct /> : <ProductDetail item={item} />}
     </div>
   );
 }

@@ -4,12 +4,10 @@ const Catalogo = () => {
 
   return (
     <>
-      <div className="text-xl">
-        <h1 className="text-center catalogueTitle">Catálogo</h1>
-        <div className=" catalogueItems catalogue">
+        <h1 className="text-center catalogueTitle">Nuestros Adaptogenos</h1>
+        <div className=" catalogueItems catalogue flex place-content-center pt-8">
           <ItemListContainer />
         </div>
-      </div>
     </>
   );
 }

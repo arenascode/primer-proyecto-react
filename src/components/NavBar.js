@@ -2,15 +2,62 @@ import { Link } from "react-router-dom";
 import { useCart } from "./context/CartContext";
 
 const NavBar = () => {
-  const { cartQty, cartList, getTotal } = useCart();
+  const { cartQty, getTotal } = useCart();
 
   return (
-    <div className="navbar bg-warning-content text-neutral-content">
-      <div className="flex-1 justify-start">
-        <Link to={"/"} className="btn btn-ghost normal-case text-xl text-white">
-          Adaptogen Store
-        </Link>
+    <div className="navbar bg-warning-content text-neutral-content gap-20 shadow-xl">
+      <div className="navbar-start lg:hidden">
+        <div className="dropdown">
+          <label tabIndex={0} className="btn btn-ghost btn-circle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-white  bg-warning-content rounded-box w-52"
+          >
+            <li>
+              <Link
+                className="focus:bg-white focus:text-warning-content hover:bg-white hover:text-warning-content"
+                to={"/"}
+              >
+                Homepage
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="focus:bg-white focus:text-warning-content hover:bg-white hover:text-warning-content"
+                to={"/catalogo"}
+              >
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="focus:bg-white focus:text-warning-content hover:bg-white hover:text-warning-content"
+                to={"/cart"}
+              >
+                Cart
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
+      <Link to={"/"} className="btn btn-ghost normal-case text-xl text-white">
+        Adaptogen Store
+      </Link>
       <div className="navbar-start hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
@@ -46,8 +93,8 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      <div className="flex-none">
-        <div className="dropdown dropdown-end">
+      <div className="flex-none end">
+        <div className="dropdown dropdown-end cart-widget">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
               <svg
@@ -69,13 +116,13 @@ const NavBar = () => {
           </label>
           <div
             tabIndex={0}
-            className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
+            className="mt-3 card card-compact dropdown-content w-52 bg-warning-content shadow"
           >
-            <div className="card-body bg-zinc-500">
+            <div className="card-body bg-warning-content">
               <span className="font-bold text-lg text-white">
                 {cartQty()} Items
               </span>
-              <span className="text-white">Subtotal: ${getTotal()}</span>
+              <span className="text-white text-lg">Subtotal: ${getTotal()}</span>
               <div className="card-actions">
                 <button className="btn btn-xs justify-end mt-3 btn-success">
                   <Link to={"/cart"}>Ir al Carrito</Link>
