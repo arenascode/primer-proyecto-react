@@ -27,7 +27,7 @@ const CartContextProvider = ({ children }) => {
   const addToCart = (item, counter) => {
 
     // if the user don't choose a quantity
-    if (counter == 0) {
+    if (counter === 0) {
       Swal.fire({
         text: "Selecciona una cantidad"
       });
@@ -35,7 +35,7 @@ const CartContextProvider = ({ children }) => {
     } else {
       // if the product is in the cart
       if (isInCart(item)) {
-        const itemFound = cartList.find(p => p.id == item.id)
+        const itemFound = cartList.find(p => p.id === item.id)
         itemFound.quantity += counter
       } else {
         item.quantity = counter

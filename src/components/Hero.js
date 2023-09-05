@@ -7,7 +7,7 @@ const Hero = () => {
     width: "100%",
     height: "100%",
     backgroundImage: `url("./adaptogenosLogo.jpeg")`,
-    backgroundColor: "#130c08c8",
+    // backgroundColor: "#130c08c8",
   };
 
   return (
@@ -16,7 +16,7 @@ const Hero = () => {
       className="hero min-h-screen"
       style={style}>
       <div className="hero-overlay"></div>
-      <div className="hero-content text-center">
+      <div className="hero-content text-center text-white">
         <div className="max-w-md">
           <h1 className="mb-10 text-5xl font-bold description">Welcome to your Adaptogen Store</h1>
           <hr />

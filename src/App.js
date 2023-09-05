@@ -11,7 +11,6 @@ import BuyForm from "./components/BuyForm";
 
 function App() {
   return (
-    <div>
       <CartContextProvider>
         <BrowserRouter>
           <NavBar />
@@ -25,7 +24,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </CartContextProvider>
-    </div>
   );
 }
 

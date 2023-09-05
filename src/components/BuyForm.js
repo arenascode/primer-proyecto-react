@@ -20,12 +20,13 @@ const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
     console.log(buyerPhoneInput.value);
     console.log(buyerMailInput.value);
 
-(buyerNameInput.value == "" || buyerPhoneInput.value == "" || buyerMailInput.value == "") ? setDisabledBtn(true) : setDisabledBtn(false);
+(buyerNameInput.value === "" || buyerPhoneInput.value === "" || buyerMailInput.value === "") ? setDisabledBtn(true) : setDisabledBtn(false);
 
   }
   
   return (
-    <form className="containerFormCompra flex flex-col gap-3">
+    <form className="containerFormCompra flex flex-col gap-3 rounded-md">
+      <label className="text-lg font-bold">Tus Datos:</label>
       <div className="input-group flex-nowrap input-group-sm">
         <span className="input-group-text" id="addon-wrapping">
           Nombre:
@@ -57,8 +58,8 @@ const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
         </span>
         <input
           id="buyerMail"
-          type="mail"
-          className="input input-bordered input-sm w-full max-w-xs"
+          type="email"
+          className="input input-bordered input-sm w-full max-w-sm"
           aria-label="Mail"
           placeholder="ej: hola@gmail.com"
           required onChange={udpateBuyer}

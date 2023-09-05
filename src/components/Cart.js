@@ -23,8 +23,8 @@ const Cart = () => {
   const CartEmpty = () => {
     
     return (
-      <>
-        <div className="card w-96 bg-base-100 shadow-xl mt-28 ml-96">
+      <div className="bg-stone-800 h-screen glass hover:bg-stone-800 pt-28">
+        <div className="card w-96 bg-base-100 shadow-xl lg:mt-28 lg:ml-96 m-auto">
           <figure className="px-10 pt-10">
             {/* <img
             src=""
@@ -44,7 +44,7 @@ const Cart = () => {
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
   
@@ -99,8 +99,8 @@ const Cart = () => {
       {cartList.length === 0 ? (
         <CartEmpty />
       ) : (
-        <div className="flex gap-2 relative cartContainer h-full">
-          <div className=" w-min CartList  m-5 mt-10">
+        <div className="lg:flex gap-2 relative cartContainer h-screen p-5">
+          <div className="desktop w-min CartList pt-10 hidden lg:block">
             <table className="table w-min">
               {/* <!-- head --> */}
               <thead>
@@ -120,11 +120,33 @@ const Cart = () => {
                 {/* <!-- row 2 --> */}
               </tbody>
             </table>
+            </div>
+            {/* Cart details for MoBile Design */}
+          <div className="mobile lg:hidden CartList pt-10">
+            <table className=" bg-stone-100 w-12/12 m-auto p-5 lg:w-min rounded-lg">
+              {/* <!-- head --> */}
+              <thead>
+                <tr>
+                  <th className="p-1">Producto</th>
+                  <th className="p-1 pr-6">Cantidad</th>
+                  <th className="p-1 pr-6">Precio</th>
+                  <th className="pr-4">Total</th>
+                  <th className="pr-2">Borrar</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* <!-- row 1 --> */}
+                {cartList.map((p) => (
+                  <ItemCart key={p.id} p={p} />
+                ))}
+                {/* <!-- row 2 --> */}
+              </tbody>
+            </table>
           </div>
-          <div className="buyDetailsandForm border-2 m-5 mt-10 w-70 bg-stone-100 h-min sticky top-0 flex gap-2 p-3 rounded-lg">
-            <div className="buyDetails w-max p-3">
+          <div className="buyDetailsandForm border-2 m-auto mt-10 bg-stone-100 h-min sticky top-0 md:flex gap-2 p-3 rounded-lg w-full">
+            <div className="buyDetails w-12/12">
               <div className="buyDetailsTitle bg-stone-200 mt-0 p-2 rounded-md">
-                <h1 className="text-center h-10 pt-2 w-max">
+                <h1 className="text-center text-lg h-10 pt-2">
                   <strong>Detalle de tu Compra</strong>
                 </h1>
               </div>
@@ -141,18 +163,18 @@ const Cart = () => {
                   <strong>Envío:</strong> {deliveryCost}
                 </h2>
               </div>
-              <div className="total bg-stone-200 border-t-2 border-slate-400">
-                <strong className=" p-3 pt-4">
+              <div className="total bg-stone-200 border-t-2 border-slate-400 h-8 mt-2">
+                <strong className=" p-2 pt-4 text-lg">
                   Total: {getTotal() + deliveryCost}
                 </strong>
               </div>
-              <div className="checkOutActions flex gap-2">
-                <button onClick={deleteList} className="btn btn-xs mt-2">
+              <div className="checkOutActions flex gap-2 justify-end">
+                <button onClick={deleteList} className="btn btn-sm mt-4 ">
                   Vaciar Carrito
                 </button>
               </div>
             </div>
-            <div className="buyForm W-50 p-2 ml-2">
+            <div className="buyForm W-50 p-2 mt-2">
               <div className="border formCheckout">
                 <BuyForm
                   setBuyer={setBuyer}
@@ -160,10 +182,10 @@ const Cart = () => {
                   buyer={buyer}
                 />
               </div>
-              <div className="sendOrderButton mt-5">
+              <div className="sendOrderButton mt-5 flex justify-end">
                 <button
                   id="checkoutBtn"
-                  className="btn btn-xs btn-success"
+                  className="btn btn-sm btn-success"
                   type="submit"
                   value="enviar"
                   onClick={sendOrder}

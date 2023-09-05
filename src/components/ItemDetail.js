@@ -7,7 +7,7 @@ import ItemCount from "./ItemCount";
 const ProductDetail = ({ item }) => {
   
   return (
-    <div className="containerProductDetail bg-grey-900 glass flex-1">
+    <div className="containerProductDetail bg-stone-800 glass hover:bg-stone-800 flex-1">
       <div className="flex productDetail">
         <div className=" photoandBuyDetails mt-8 flex flex-col place-content-center bg-#78716c lg:flex-row">
           {/* Container buy, stock, addCart info */}
@@ -68,7 +68,6 @@ const ProductDetail = ({ item }) => {
                 <li className="text-sm">
                   <Link
                     to={"/catalogo/product/:id"}
-                    href="#"
                     aria-current="page"
                     className="font-medium text-white-500 hover:text-gray-600"
                   >
@@ -178,7 +177,7 @@ const ItemDetail = () => {
     getDocs(productsCollection).then((snapshot) => {
       const productsFb = snapshot.docs.map((i) => ({id: i.id, ...i.data()}))
       console.log(productsFb);
-      let productFb = productsFb.find(p => p.id == itemId)
+      let productFb = productsFb.find(p => p.id === itemId)
       console.log(productFb);
       setItem(productFb)
       setLoadingProduct(false)
@@ -188,16 +187,16 @@ const ItemDetail = () => {
     const LoadingProduct = () => {
   
     return (
-      <div className="h-screen flex m-auto bg-#78716c glass">
+      <div className="h-screen flex m-auto bg-stone-800 glass hover:bg-stone-800">
         <h1 className="text-2xl text-white m-auto">Loading Product...</h1>
       </div>
     );
     }
   
   return (
-    <div className="bg-#78716c">
+    <>
       {loadingProduct ? <LoadingProduct /> : <ProductDetail item={item} />}
-    </div>
+    </>
   );
 }
 export default ItemDetail
