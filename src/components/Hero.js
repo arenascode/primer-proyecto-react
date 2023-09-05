@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <>
       <div
-      className="hero min-h-screen"
+      className="hero max-h-screen"
       style={style}>
       <div className="hero-overlay"></div>
       <div className="hero-content text-center text-white">

@@ -5,8 +5,8 @@ const NavBar = () => {
   const { cartQty, getTotal } = useCart();
 
   return (
-    <div className="navbar bg-warning-content text-neutral-content gap-20 shadow-xl">
-      <div className="navbar-start lg:hidden">
+    <div className="navbar bg-warning-content text-neutral-content shadow-xl w-screen justify-between">
+      <div className="navbar-start w-24 lg:hidden">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <svg
@@ -93,8 +93,8 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      <div className="flex-none end">
-        <div className="dropdown dropdown-end cart-widget">
+      <div className="flex justify-end">
+        <div className="dropdown dropdown-end cart-widget flex justify-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
               <svg

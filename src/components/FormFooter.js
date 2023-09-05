@@ -63,7 +63,7 @@ const FormFooter = () => {
           />
           He leído los términos y condiciones y políticas de privacidad
         </label>
-        <button className="btn btn-outline btn-warning ml-28 justify-center" type="submit">
+        <button className="btn btn-outline btn-warning ml-24 justify-center" type="submit">
           Notifícame por Correo!
         </button>
       </form>
