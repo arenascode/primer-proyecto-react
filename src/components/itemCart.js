@@ -16,11 +16,11 @@ const ProductCart = ({ p }) => {
             
             <div className="p-2 md:p-4 lg:w-32">
               <div className="avatar flex">
-              <div className="mask mask-squircle lg:w-11/12 h-12 ml-3">
+              <div className="mask mask-squircle lg:w-11/12 h-12 ml-3 lg:ml-1">
                 <img src={p.img} alt="Avatar Tailwind CSS Component" />
               </div>
             </div>
-              <div className="font-bold text-center text-sm">{p.name}</div>
+              <div className="font-bold text-center text-sm lg:text-lg">{p.name}</div>
               <div className="text-sm text-center opacity-50">{[p.especie]}</div>
             </div>
           </div>

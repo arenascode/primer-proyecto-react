@@ -128,10 +128,10 @@ const Cart = () => {
               <thead className="">
                 <tr className="bg-grey-300">
                   <th className="p-1">Producto</th>
-                  <th className="p-1 pr-4">Cantidad</th>
-                  <th className="p-1 pr-4">Precio</th>
-                  <th className="pr-4">Total</th>
-                  <th className="pr-3">Borrar</th>
+                  <th className="p-1 pr-5">Cantidad</th>
+                  <th className="p-1 pr-5">Precio</th>
+                  <th className="pr-5">Total</th>
+                  <th className="pr-4">Borrar</th>
                 </tr>
               </thead>
               <tbody>
