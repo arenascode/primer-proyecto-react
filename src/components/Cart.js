@@ -99,7 +99,7 @@ const Cart = () => {
       {cartList.length === 0 ? (
         <CartEmpty />
       ) : (
-        <div className="lg:flex gap-2 relative cartContainer h-screen p-2 text-black">
+        <div className="lg:flex gap-2 relative cartContainer p-2 text-black">
           <div className="desktop w-max CartList pt-10 hidden lg:block ">
             <table className=" bg-stone-100 rounded-lg">
               {/* <!-- head --> */}
@@ -122,16 +122,16 @@ const Cart = () => {
             </table>
           </div>
           {/* Cart details for MoBile Design */}
-          <div className="mobile lg:hidden CartList pt-10">
-            <table className=" bg-stone-100 w-12/12 lg:w-min rounded-lg">
+          <div className="mobile lg:hidden CartList pt-10 m-auto">
+            <table className=" bg-stone-100 w-10/12 lg:w-min rounded-lg m-auto">
               {/* <!-- head --> */}
-              <thead>
-                <tr>
+              <thead className="">
+                <tr className="bg-grey-300">
                   <th className="p-1">Producto</th>
                   <th className="p-1 pr-4">Cantidad</th>
                   <th className="p-1 pr-4">Precio</th>
                   <th className="pr-4">Total</th>
-                  <th className="pr-2">Borrar</th>
+                  <th className="pr-3">Borrar</th>
                 </tr>
               </thead>
               <tbody>
@@ -169,7 +169,10 @@ const Cart = () => {
                 </strong>
               </div>
               <div className="checkOutActions flex gap-2 justify-end">
-                <button onClick={deleteList} className="btn btn-sm btn-outline btn-error mt-4 ">
+                <button
+                  onClick={deleteList}
+                  className="btn btn-sm btn-outline btn-error mt-4 "
+                >
                   Vaciar Carrito
                 </button>
               </div>

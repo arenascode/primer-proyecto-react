@@ -39,7 +39,7 @@ const FormFooter = () => {
   };
 
   return (
-    <div className="contact-form bg-warning-conten lg:flex-col lg:w-7/12 lg:m-auto">
+    <div className="contact-form bg-warning-content lg:flex-col lg:w-7/12 lg:m-auto">
       <h2 className="form-title">Permanezcamos en contacto</h2>
       <form onSubmit={handleSubmit}>
         <p className="text-center">
