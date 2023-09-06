@@ -12,13 +12,13 @@ const ProductCart = ({ p }) => {
     <>
       <tr>
         <td className="productTableCart">
-          <div className="flex items-center lg:space-x-3">
+          <div className="flex items-center lg:space-x-3 text-black">
             <div className="avatar">
-              <div className="mask mask-squircle ml-2 lg:w-12 h-12">
+              <div className="mask mask-squircle ml-2 lg:w-11/12 h-12">
                 <img src={p.img} alt="Avatar Tailwind CSS Component" />
               </div>
             </div>
-            <div className="p-2 md:p-4">
+            <div className="p-2 md:p-4 lg:w-32">
               <div className="font-bold">{p.name}</div>
               <div className="text-sm opacity-50">{[p.especie]}</div>
             </div>

@@ -7,18 +7,18 @@ import ItemCount from "./ItemCount";
 const ProductDetail = ({ item }) => {
   
   return (
-    <div className="containerProductDetail bg-stone-800 glass hover:bg-stone-800 flex-1">
+    <div className="containerProductDetail bg-stone-800 glass hover:bg-stone-800 flex-1 lg:p-10 ">
       <div className="flex productDetail">
         <div className=" photoandBuyDetails mt-8 flex flex-col place-content-center bg-#78716c lg:flex-row">
           {/* Container buy, stock, addCart info */}
-          <div className=" productPhoto overflow-hidden rounded-t-lg lg:block w-10/12 flex ml-12">
+          <div className=" productPhoto overflow-hidden rounded-t-lg lg:block w-10/12 lg:w-11/12 flex ml-10">
             <img
               src={item.img}
               alt=""
               className="h-full w-full object-cover object-center"
             />
           </div>
-          <div className="buyDetails artboard artboard-vertical ml-12 bg-#78716c glass w-10/12 text-white">
+          <div className="buyDetails artboard artboard-vertical ml-10 lg:ml-0 bg-#78716c glass w-10/12 text-white">
             <h1 className="font-bold tracking-normal text-2xl mt-3 text-justify ml-3 ">
               {item.name}
             </h1>
@@ -99,19 +99,19 @@ const ProductDetail = ({ item }) => {
         </div>
       </div>
       {/* Product Info  */}
-      <div className="productDescription ml-12 w-10/12 flex flex-col bg-#78716c glass text-white rounded-b-lg lg:flex-row">
-        <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 content-center">
+      <div className="productDescription ml-10 w-10/12 flex flex-col lg:w-11/12 bg-#78716c glass text-white rounded-b-lg lg:flex-row">
+        <div className="whatIs lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-6 content-center">
           <h1 className=" font-bold tracking-normal text-white-900  text-2xl mt-4 ml-8 text-start">
             ¿Qué es?
           </h1>
           <div className="space-y-6">
-            <p className="text-lg text-justify text-white w-80 ml-10 mt-4 tracking-wide">
+            <p className="text-lg text-justify text-white w-80 ml-4 mt-4 tracking-wide">
               {item.description}
             </p>
           </div>
         </div>
 
-        <div className="properties ml-8 lg:border-r lg:border-gray-200">
+        <div className="properties ml-4 lg:border-r lg:border-gray-200">
           <h1 className="font-bold tracking-normal text-2xl mt-8 text-start">
             Propiedades
           </h1>
@@ -142,13 +142,12 @@ const ProductDetail = ({ item }) => {
           </div>
         </div>
 
-        <div className="recomendedUse ml-8 w-80 text-justify mb-8">
-          <h1 className="font-bold tracking-normal text-2xl m-auto mt-8 text-start">
+        <div className="recomendedUse ml-3 w-80 text-justify mb-8 lg:w-11/12">
+          <h1 className="font-bold tracking-normal text-2xl m-auto mt-4 text-start">
             ¿Cómo se usa?
           </h1>
-
-          <div className="mt-4 space-y-6">
-            <p className="font-medium text-justify w-80 mt-9 tracking-wide">
+          <div className="mt-2 lg:mt-1">
+            <p className="font-medium text-justify w-80 lg:w-11/12 mt-9 lg:mt-4 tracking-wide">
               {item.uso}
             </p>
           </div>

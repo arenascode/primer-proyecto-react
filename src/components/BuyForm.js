@@ -28,59 +28,47 @@ const BuyForm = ({ setBuyer, setDisabledBtn, buyer }) => {
     <form className="containerFormCompra flex flex-col gap-3 rounded-md">
       <label className="text-lg font-bold">Tus Datos:</label>
       <div className="input-group flex-nowrap input-group-sm">
-        <span className="input-group-text" id="addon-wrapping">
+        <span className="input-group-text bg-slate-400" id="addon-wrapping">
           Nombre:
         </span>
         <input
           id="buyerName"
           type="text"
-          className="input input-bordered input-sm w-full max-w-xs"
+          className="input input-bordered input-sm w-full max-w-xs bg-gray-300"
           aria-label="nombre"
-          required onChange={udpateBuyer}
+          placeholder="tu nombre"
+          required
+          onChange={udpateBuyer}
         />
       </div>
-      <div className="input-group flex-nowrap input-group-sm">
-        <span className="input-group-text " id="addon-wrapping">
+      <div className="input-group flex-nowrap input-group-sm bg-gray-300">
+        <span className="input-group-text bg-slate-400" id="addon-wrapping">
           Whatsapp:
         </span>
         <input
           id="buyerPhone"
           type="number"
-          className="input input-bordered input-sm w-full max-w-xs"
+          className="input input-bordered input-sm w-full max-w-xs bg-gray-300"
           aria-label="whatsapp"
           placeholder="ej: 11 1234 5678"
-          required onChange={udpateBuyer}
+          required
+          onChange={udpateBuyer}
         />
       </div>
       <div className="input-group flex-nowrap input-group-sm">
-        <span className="input-group-text" id="addon-wrapping">
+        <span className="input-group-text bg-slate-400" id="addon-wrapping">
           Mail
         </span>
         <input
           id="buyerMail"
           type="email"
-          className="input input-bordered input-sm w-full max-w-sm"
+          className="input input-bordered input-sm w-full max-w-sm bg-gray-300"
           aria-label="Mail"
           placeholder="ej: hola@gmail.com"
-          required onChange={udpateBuyer}
+          required
+          onChange={udpateBuyer}
         />
       </div>
-      {/* <div className="input-group flex-nowrap input-group-sm">
-        <span className="input-group-text" id="addon-wrapping">
-          Dirección
-        </span>
-        <input
-          type="text"
-          className="input input-bordered input-sm w-full max-w-xs"
-          aria-label="direccion"
-          aria-describedby="addon-wrapping"
-          placeholder="ej: Calle Malabia 2854 5D"
-          required onChange={udpateBuyer}
-        />
-      </div> */}
-      {/* <button className="btn btn-xs btn-success" type="submit" value="enviar" onClick={sendOrder}>
-        Confirmar
-      </button> */}
     </form>
   );
 }

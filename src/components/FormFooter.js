@@ -39,10 +39,10 @@ const FormFooter = () => {
   };
 
   return (
-    <div className="contact-form bg-warning-content">
+    <div className="contact-form bg-warning-conten lg:flex-col lg:w-7/12 lg:m-auto">
       <h2 className="form-title">Permanezcamos en contacto</h2>
       <form onSubmit={handleSubmit}>
-        <p>
+        <p className="text-center">
           Te informaremos sobre nuevos productos, promociones, descuentos,
           eventos y noticias relacionadas a tus intereses
         </p>
@@ -63,7 +63,7 @@ const FormFooter = () => {
           />
           He leído los términos y condiciones y políticas de privacidad
         </label>
-        <button className="btn btn-outline btn-warning ml-24 justify-center" type="submit">
+        <button className="btn btn-outline btn-warning ml-24 lg:ml-56" type="submit">
           Notifícame por Correo!
         </button>
       </form>

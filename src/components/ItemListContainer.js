@@ -42,7 +42,7 @@ const ItemListContainer = () => {
   return (
     <>
       {loadingProducts ? <LoadingProducts /> :
-        <div className="flex flex-wrap gap-11 place-content-center p-2">
+        <div className="flex flex-wrap gap-11 lg:gap-16 place-content-center p-2">
           {listOfProducts}
         </div>
       }

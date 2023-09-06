@@ -93,7 +93,7 @@ const NavBar = () => {
           </li>
         </ul>
       </div>
-      <div className="flex justify-end">
+      <div className="flex justify-end lg:mr-10">
         <div className="dropdown dropdown-end cart-widget flex justify-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">

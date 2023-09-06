@@ -99,17 +99,17 @@ const Cart = () => {
       {cartList.length === 0 ? (
         <CartEmpty />
       ) : (
-        <div className="lg:flex gap-2 relative cartContainer h-screen p-2">
-          <div className="desktop w-min CartList pt-10 hidden lg:block">
-            <table className="table w-min">
+        <div className="lg:flex gap-2 relative cartContainer h-screen p-2 text-black">
+          <div className="desktop w-max CartList pt-10 hidden lg:block ">
+            <table className=" bg-stone-100 rounded-lg">
               {/* <!-- head --> */}
               <thead>
                 <tr>
-                  <th>Producto</th>
-                  <th>Cantidad</th>
-                  <th>Precio</th>
-                  <th>Total</th>
-                  <th> borrar </th>
+                  <th className="p-4">Producto</th>
+                  <th className="p-1 pr-8">Cantidad</th>
+                  <th className="p-1 pr-8">Precio</th>
+                  <th className="pr-8">Total</th>
+                  <th className="pr-6">Borrar</th>
                 </tr>
               </thead>
               <tbody>
@@ -120,8 +120,8 @@ const Cart = () => {
                 {/* <!-- row 2 --> */}
               </tbody>
             </table>
-            </div>
-            {/* Cart details for MoBile Design */}
+          </div>
+          {/* Cart details for MoBile Design */}
           <div className="mobile lg:hidden CartList pt-10">
             <table className=" bg-stone-100 w-12/12 lg:w-min rounded-lg">
               {/* <!-- head --> */}
@@ -144,7 +144,7 @@ const Cart = () => {
             </table>
           </div>
           <div className="buyDetailsandForm border-2 m-auto mt-10 bg-stone-100 h-min sticky top-0 md:flex gap-2 p-3 rounded-lg w-full">
-            <div className="buyDetails w-12/12">
+            <div className="buyDetails w-12/12 lg:w-72">
               <div className="buyDetailsTitle bg-stone-200 mt-0 p-2 rounded-md">
                 <h1 className="text-center text-lg h-10 pt-2">
                   <strong>Detalle de tu Compra</strong>
@@ -169,7 +169,7 @@ const Cart = () => {
                 </strong>
               </div>
               <div className="checkOutActions flex gap-2 justify-end">
-                <button onClick={deleteList} className="btn btn-sm mt-4 ">
+                <button onClick={deleteList} className="btn btn-sm btn-outline btn-error mt-4 ">
                   Vaciar Carrito
                 </button>
               </div>
