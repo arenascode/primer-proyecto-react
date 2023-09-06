@@ -99,7 +99,7 @@ const Cart = () => {
       {cartList.length === 0 ? (
         <CartEmpty />
       ) : (
-        <div className="lg:flex gap-2 relative cartContainer h-screen p-5">
+        <div className="lg:flex gap-2 relative cartContainer h-screen p-2">
           <div className="desktop w-min CartList pt-10 hidden lg:block">
             <table className="table w-min">
               {/* <!-- head --> */}
@@ -123,13 +123,13 @@ const Cart = () => {
             </div>
             {/* Cart details for MoBile Design */}
           <div className="mobile lg:hidden CartList pt-10">
-            <table className=" bg-stone-100 w-12/12 m-auto p-5 lg:w-min rounded-lg">
+            <table className=" bg-stone-100 w-12/12 lg:w-min rounded-lg">
               {/* <!-- head --> */}
               <thead>
                 <tr>
                   <th className="p-1">Producto</th>
-                  <th className="p-1 pr-6">Cantidad</th>
-                  <th className="p-1 pr-6">Precio</th>
+                  <th className="p-1 pr-4">Cantidad</th>
+                  <th className="p-1 pr-4">Precio</th>
                   <th className="pr-4">Total</th>
                   <th className="pr-2">Borrar</th>
                 </tr>
